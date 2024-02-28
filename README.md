@@ -1,2 +1,0 @@
-# LautlosLernen
-Gebärdensprache lernen.

@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    restart: 'always'
+    ports:
+      - '8080:80'
+    links:
+      - mariadb
+    depends_on:
+      - mariadb
+    volumes: 
+      - ./htdocs:/var/www/html/
+  mariadb:
+    image: mariadb:11.1.2
+    restart: 'always'
+    volumes: 
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "wwi2022a"
+      MYSQL_DATABASE: "wwi2022a"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: "wwi2022a"
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    links:
+      - mariadb
+    depends_on:
+      - mariadb      
+    environment:
+      - PMA_ARBITRARY=1      
