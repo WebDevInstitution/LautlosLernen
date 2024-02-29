@@ -6,9 +6,7 @@ class DefaultController extends AbstractController {
     }
 
     public function defaultAction() {
-        //Wenn Loggin == true dann darf in die Einstellungen gegangen werden
-        $_SESSION['isLoggin'] = false;
-
+        //leer da keine Aktion       
     }
     public function impressumAction() {
         //leer da keine Aktion

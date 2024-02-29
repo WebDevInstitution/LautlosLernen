@@ -8,9 +8,9 @@
         <a href="/" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Home</a>
        <?php if(isset($_SESSION['isLoggin']) && $_SESSION['isLoggin'] == true): ?>
             <a href="/?c=learning" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Lernen</a>
-            <a href="/?c=dashbord" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Dashboard</a>
+            <a href="/?c=dashbord" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Übersicht</a>
             <a href="/?c=letter" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Buchstaben</a>
-            <a href="/?a=logoff&c=user" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">logoff</a>
+            <a href="/?a=logoff&c=user" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Abmelden</a>
 
             <?php else: ?>
 
