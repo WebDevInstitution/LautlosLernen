@@ -26,9 +26,11 @@ class UserRepository extends AbstractRepository {
     //SELECT Abfrage guckt nicht nach Groß- Kleinschreibung deswegen spätere erneute überprüfung durch if
     public function checkPassword($user, $password) {
         // Hashwert des eingegebenen Passworts erstellen
-        //$hashedPassword = hash('sha256', $password);
-        $sql = "select * FROM User WHERE Passwort = '".  $password . "' AND Username = '".$user . "'";
+        $hashedPassword = hash('sha256', $password);
+        // SQL-Abfrage mit dem gehashten Passwort ausführen
+        $sql = "SELECT * FROM User WHERE Passwort = '$hashedPassword' AND Username = '$user'";
         $data = $this->database->query($sql);
         return $data;
     }
+    
 }

@@ -1,6 +1,6 @@
 <?php 
 if($_SESSION['isLoggin']== true){
-    echo('<h1>Sie sind jetzt eingeloggt. Jetzt können sie mit dem Lernen beginnen!');
+    echo('<h1>Sie sind jetzt eingeloggt. Jetzt kannst du mit dem Lernen beginnen!');
     ?>
 
     <img style="height: 400px;" src="https://cataas.com/cat/gif"/>
