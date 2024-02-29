@@ -22,6 +22,11 @@ spl_autoload_register('autoloader');
 //Session für globale variablen wird geöffnet
 session_start();
 
+// Setze die Logon-Variable zu Beginn auf false, wenn sie noch nicht gesetzt ist
+if (!isset($_SESSION['isLoggin'])) {
+    $_SESSION['isLoggin'] = false;
+}
+
 // define default fallbacks
 const DEFAULT_CONTROLLER = 'default';
 const DEFAULT_ACTION = 'default';
@@ -55,6 +60,7 @@ $actionName = strtolower($actionInput) . 'Action';      //z.B. detaillAction
 
 // load controller file z.B.  ./controllers/carController.php
 try {
+
 
     if (file_exists($controllerFileName)) {
         // include der DB config
