@@ -66,7 +66,6 @@ try {
 
         //erstellen von der import Klase
         //pruefe_tabelle_in_db() prüft ob DB bereits existiert wenn keine Tabellen erstellt, sost werden sie hier erstellt
-        //muss nur beim ersten öffen der webseite durchgeführt werden. Danach existiert dbreset() bei bedarf unter setting
         $import = new Import($database);
         $import->pruefe_tabelle_in_db();
 
