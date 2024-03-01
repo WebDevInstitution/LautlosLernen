@@ -1,14 +1,14 @@
 <div class="header" style="background-color: black; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
 
-    <div class="logo" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <a href="http://localhost:8080"><img src="/img/lautloslernen.png" style="width: 20%; height: auto; border-radius: 10px;" alt="Lautlos Lernen"></a>
-    </div>
+<div class="logo" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); height: 50px;">
+    <a href="http://localhost:8080"><img src="/img/lautloslernen.png" style="width: 100%; height: auto; border-radius: 10px; height: 100%;" alt="Lautlos Lernen"></a>
+</div>
 
     <div class="nav" style="display: flex; margin-right: 40px;">
         <a href="/" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Home</a>
        <?php if(isset($_SESSION['isLoggin']) && $_SESSION['isLoggin'] == true): ?>
             <a href="/?c=learning" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Lernen</a>
-            <a href="/?c=dashbord" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Übersicht</a>
+            <a href="/?c=dashboard" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Lernerfolg</a>
             <a href="/?c=letter" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Buchstaben</a>
             <a href="/?a=logoff&c=user" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Abmelden</a>
 
