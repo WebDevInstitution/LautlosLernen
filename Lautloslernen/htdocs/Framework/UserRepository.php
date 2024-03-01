@@ -6,7 +6,7 @@ class UserRepository extends AbstractRepository {
         parent::__construct($database);
     }
  
-    //Daten in Model üertragen
+    //Daten in Model üertragen// wird noch nicht genutzt
     private function createUserFromData($data) {
         $user = new UserModel();
            
@@ -17,10 +17,8 @@ class UserRepository extends AbstractRepository {
         $user->setPassword($data['password']);
         $user->setUsername($data['username']);
        
- 
         return $user;
     }
- 
  
     //In der Anmeldung genutzte Daten werden hier von der DB abgefragt
     //SELECT Abfrage guckt nicht nach Groß- Kleinschreibung deswegen spätere erneute überprüfung durch if
