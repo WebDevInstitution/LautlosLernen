@@ -1,48 +1,57 @@
 <?php
 class dashboardModel {
-    private $dashboardId;
-    private $userId;
-    private $Datum;
-    private $richtigeAntworten;
-    private $falscheAntworten;
+    private $Dashbord_id;
+    private $user_id;
+    private $datum;
+    private $buchstabe;
+    private $richtige_antworten;
+    private $falsche_antworten;
 
-    public function getdashboardId() {
-        return $this->dashboardId;
+    public function getDashbord_id() {
+        return $this->Dashbord_id;
     }
 
-    public function setdashboardId($dashboardId) {
-        $this->dashboardId = $dashboardId;
+    public function setDashbord_id($Dashbord_id) {
+        $this->Dashbord_id = $Dashbord_id;
     }
 
-    public function getUserId() {
-        return $this->userId;
+    public function getUser_id() {
+        return $this->user_id;
     }
 
-    public function setUserId($userId) {
-        $this->userId = $userId;
+    public function setUser_id($user_id) {
+        $this->user_id = $user_id;
     }
 
     public function getDatum() {
-        return $this->Datum;
+        return $this->datum;
     }
 
-    public function setDatum($Datum) {
-        $this->Datum = $Datum;
+    public function setDatum($datum) {
+        $this->datum = $datum;
     }
 
-    public function getRichtigeAntworten() {
-        return $this->richtigeAntworten;
+    public function getBuchstabe() {
+        return $this->buchstabe;
     }
 
-    public function setRichtigeAntworten($richtigeAntworten) {
-        $this->richtigeAntworten = $richtigeAntworten;
+    public function setBuchstabe($buchstabe) {
+        $this->buchstabe = $buchstabe;
     }
 
-    public function getFalscheAntworten() {
-        return $this->falscheAntworten;
+    public function getRichtige_antworten() {
+        return $this->richtige_antworten;
     }
 
-    public function setFalscheAntworten($falscheAntworten) {
-        $this->falscheAntworten = $falscheAntworten;
+    public function setRichtige_antworten($richtige_antworten) {
+        $this->richtige_antworten = $richtige_antworten;
+    }
+
+    public function getFalsche_antworten() {
+        return $this->falsche_antworten;
+    }
+
+    public function setFalsche_antworten($falsche_antworten) {
+        $this->falsche_antworten = $falsche_antworten;
     }
 }
