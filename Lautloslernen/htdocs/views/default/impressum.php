@@ -2,7 +2,7 @@
 <h1>Impressum und Haftungsausschluss</h1>
 
 <h2>Verantwortlich für den Inhalt:</h2>
-<p>lautloslernen<br>
+<p>Lautloslernen<br>
 Musterstraße 1a<br>
 Stuttgart 70174<br>
 lautlos@lernen.com<br></p>

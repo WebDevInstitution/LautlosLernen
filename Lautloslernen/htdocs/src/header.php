@@ -13,6 +13,7 @@
             <a href="/?a=logoff&c=user" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Abmelden</a>
 
             <?php else: ?>
+                <a href="/?c=user" class="nav-link" style="background-color: grey; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Anmelden</a>
 
             <?php endif; ?>
     </div>

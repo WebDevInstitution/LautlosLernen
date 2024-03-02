@@ -5,7 +5,7 @@ class UserController extends AbstractController {
     }
 
     public function defaultAction() {
-        //keine default aktion
+        //keine Aktionen
     }
 
     //wenn der Login-Button auf der Anmelde Seite gedrückt wird
@@ -17,11 +17,16 @@ class UserController extends AbstractController {
             //UserRepository für die Abfrage öffnen
             $userRepository = new UserRepository($this->database);
             $check = $userRepository->checkPassword($_POST['benutzername'], $_POST['passwort']);
-
             $hashedPassword = hash('sha256', $_POST['passwort']);
             //Wenn Passwort und Username übereinstimmen wird die Variable auf true gesetzt
             if(!empty($check) && $check[0]['Passwort'] == $hashedPassword && $check[0]['Username'] == $_POST['benutzername']) {
                 $_SESSION['isLoggin'] = true;
+                //Speichern der UserID für das Dashbord
+                $_SESSION['UserID'] = $check[0]['UserID'];
+                echo($_SESSION['UserID']);
+                //Andere Option
+                //$user = $userRepository->getActualUser();
+                //this->view->user = $user;
             } else {
                 $_SESSION['isLoggin'] = false;
             } 
