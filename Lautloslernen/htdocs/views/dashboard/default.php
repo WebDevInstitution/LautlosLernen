@@ -22,10 +22,6 @@
 
 
 
-
-
-
-
 <!-- Laden Sie die Chart.js-Bibliothek -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -38,11 +34,13 @@ var dates = [];
 var correctAnswers = [];
 var wrongAnswers = [];
 
-<?php foreach ($this->dashboard as $dashboard): ?>
+ <?php foreach ($this->dashboard as $dashboard): ?>
     dates.push('<?php echo $dashboard->getDatum(); ?>');
     correctAnswers.push(<?php echo $dashboard->getRichtige_antworten(); ?>);
-    wrongAnswers.push(<?php echo $dashboard->getFalsche_antworten(); ?>);
-<?php endforeach; ?>
+   wrongAnswers.push(<?php echo $dashboard->getFalsche_antworten(); ?>);
+<?php endforeach; ?> 
+
+
 
 // Kontext des Canvas-Elements erhalten
 var ctx = document.getElementById('dashboardChart').getContext('2d');
@@ -78,57 +76,4 @@ var chart = new Chart(ctx, {
 });
 </script>
 
-
-
-<!-- Laden Sie die Chart.js-Bibliothek -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Erstellen Sie ein Canvas-Element für das Balkendiagramm -->
-<canvas id="dashboardChart"></canvas>
-
-<script>
-// Daten für das Balkendiagramm vorbereiten
-var dates = [];
-var correctAnswers = [];
-var wrongAnswers = [];
-
-<?php foreach ($this->answersByDay as $answer): ?>
-    dates.push('<?php echo $answer['datum']; ?>');
-    correctAnswers.push(<?php echo $answer['richtige_antworten']; ?>);
-    wrongAnswers.push(<?php echo $answer['falsche_antworten']; ?>);
-<?php endforeach; ?>
-
-// Kontext des Canvas-Elements erhalten
-var ctx = document.getElementById('dashboardChart').getContext('2d');
-
-// Balkendiagramm erstellen
-var chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: dates,
-        datasets: [{
-            label: 'Richtige Antworten',
-            data: correctAnswers,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Grüne Farbe für richtige Antworten
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-        }, {
-            label: 'Falsche Antworten',
-            data: wrongAnswers,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)', // Rote Farbe für falsche Antworten
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-</script>
 

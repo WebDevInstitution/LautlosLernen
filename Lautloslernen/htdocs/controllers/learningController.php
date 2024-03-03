@@ -6,7 +6,7 @@ class learningController extends AbstractController {
     }
 
     public function defaultAction(){
-        //Keine Aktionen
+        
     }
 
 }
