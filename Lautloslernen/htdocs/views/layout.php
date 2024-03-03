@@ -19,7 +19,5 @@
     </main>
 </br>
         <?php include './src/footer.php'; ?>
-
-    <script src="./script.js"></script>
 </body>
 </html>
