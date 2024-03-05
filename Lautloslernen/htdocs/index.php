@@ -26,6 +26,7 @@ session_start();
 if (!isset($_SESSION['isLoggin'])) {
     $_SESSION['isLoggin'] = false;
 }
+echo $_SESSION['isLoggin'];
 
 // define default fallbacks
 const DEFAULT_CONTROLLER = 'default';
