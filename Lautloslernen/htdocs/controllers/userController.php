@@ -8,8 +8,49 @@ class UserController extends AbstractController {
         //keine Aktionen
     }
 
+    public function registrationAction() {
+        //keine Aktionen
+    }
+
+    //Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
+    public function SuccessfulRegistrationAction() {
+        // Übernahme der Daten aus dem Formular
+        if(isset($_POST['vorname']) && isset($_POST['nachname']) && isset($_POST['passwort']) && isset($_POST['username']) && isset($_POST['email'])) {
+            $vorname = $_POST['vorname'];
+            $nachname = $_POST['nachname'];
+            $passwort = $_POST['passwort'];
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            
+            $userRepository = new UserRepository($this->database);
+            $check = $userRepository->userExist($username);
+            if ($check == TRUE) {
+                echo "<script>alert('Dieser Username existiert bereits');</script>";
+                $this->view->setview('./views/user/registration.php');
+            }
+            
+            else{
+            // Hashen des Passworts
+            $hashedPassword = hash('sha256', $passwort);
+            // Daten in die Datenbank schreiben
+            $sql = "INSERT INTO User (UserID, Vorname, Nachname, Passwort, Email, Username)
+                    VALUES (NULL, '$vorname', '$nachname', '$hashedPassword', '$email', '$username')";
+            $this->database->query($sql);
+
+            }
+        } else {
+            // Falls POST-Daten fehlen, entsprechend handhaben
+            echo "Fehler: Nicht alle erforderlichen Felder wurden gesendet.";
+        }
+    }
+    
+    public function loginAction(){
+        //keine Aktionen
+    }
+        
+
     //wenn der Login-Button auf der Anmelde Seite gedrückt wird
-    public function loginAction() {
+    public function successfulloginAction() {
 
         //Wenn Username als auch PW gesetzt sind
         if(isset($_POST['benutzername']) && isset($_POST['passwort'])) {
@@ -23,10 +64,6 @@ class UserController extends AbstractController {
                 $_SESSION['isLoggin'] = true;
                 //Speichern der UserID für das Dashbord
                 $_SESSION['UserID'] = $check[0]['UserID'];
-                echo($_SESSION['UserID']);
-                //Andere Option
-                //$user = $userRepository->getActualUser();
-                //this->view->user = $user;
             } else {
                 $_SESSION['isLoggin'] = false;
             } 

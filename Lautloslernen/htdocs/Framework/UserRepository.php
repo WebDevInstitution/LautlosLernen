@@ -30,5 +30,14 @@ class UserRepository extends AbstractRepository {
         $data = $this->database->query($sql);
         return $data;
     }
+
+    public function userExist($username){
+        $sql = "SELECT * FROM User WHERE Username = '$username'";
+        $data = $this->database->query($sql);
+        if($data == NULL){
+            return false;
+        }
+        return true;
+    }
     
 }

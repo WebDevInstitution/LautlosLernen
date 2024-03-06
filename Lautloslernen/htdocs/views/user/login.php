@@ -1,15 +1,11 @@
-<?php 
-if($_SESSION['isLoggin']== true){
-    echo('<h1>Sie sind jetzt eingeloggt. Jetzt kannst du mit dem Lernen beginnen!');
-    ?>
 
-    <img style="height: 400px;" src="https://cataas.com/cat/gif"/>
-    <?php
-}
-else{
-    echo('<h1>Passwort oder Username falsch!!!');
-    ?>
-    <a href="http://localhost:8080">Home </a> </h1></br>
-    <img style="height: 400px;" src="https://cataas.com/cat/gif"/>
-    <?php
-}
+<h2>Login</h2>
+<form method="post" action="/?c=user&a=successfulLogin">
+    <label for="benutzername">Benutzername:</label>
+    <input type="text" name="benutzername" id="benutzername" required><br><br>
+
+    <label for="passwort">Passwort:</label>
+    <input type="password" name="passwort" id="passwort" required><br><br>
+
+    <input type="submit" value="Anmelden">
+</form>
