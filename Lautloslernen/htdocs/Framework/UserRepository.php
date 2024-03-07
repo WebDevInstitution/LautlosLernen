@@ -22,17 +22,17 @@ class UserRepository extends AbstractRepository {
  
     //In der Anmeldung genutzte Daten werden hier von der DB abgefragt
     //SELECT Abfrage guckt nicht nach Groß- Kleinschreibung deswegen spätere erneute überprüfung durch if
-    public function checkPassword($user, $password) {
+    public function checkPassword($email, $password) {
         // Hashwert des eingegebenen Passworts erstellen
         $hashedPassword = hash('sha256', $password);
         // SQL-Abfrage mit dem gehashten Passwort ausführen
-        $sql = "SELECT * FROM User WHERE Passwort = '$hashedPassword' AND Username = '$user'";
+        $sql = "SELECT * FROM User WHERE Passwort = '$hashedPassword' AND Email = '$email'";
         $data = $this->database->query($sql);
         return $data;
     }
 
-    public function userExist($username){
-        $sql = "SELECT * FROM User WHERE Username = '$username'";
+    public function userEmailExist($email){
+        $sql = "SELECT * FROM User WHERE Email = '$email'";
         $data = $this->database->query($sql);
         if($data == NULL){
             return false;
