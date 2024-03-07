@@ -37,8 +37,7 @@ Um das Projekt auf dem eigenen PC richtig verwenden zu können, muss [Docker Des
 Für Windows muss außerdem [das Linux Subsystem for Windows WSL 2](https://learn.microsoft.com/de-de/windows/wsl/install) installiert sein. Unter MacOS oder Linux ist dies nicht nötig.<br>
 Im Verzeichnis `Lautloslernen/docker-compose.yml` muss das File `docker-compose.yml` mit ```docker-compose up``` gestartet werden.<br>
 Der daraus gebaute Container macht den Abruf der Website unter [http://localhost:8080](http://localhost:8080) möglich.<br>
-Die Datenbank ist unter dem Port 8081 zu finden.<br>
-<br>
+Die Datenbank ist unter dem [http://localhost:8081](http://localhost:8081) zu finden.<br>
 Login-Daten dafür sind:
 <table>
   <tr>
