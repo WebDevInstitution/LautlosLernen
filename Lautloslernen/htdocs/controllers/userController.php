@@ -23,9 +23,9 @@ class UserController extends AbstractController {
             $email = $_POST['email'];
             
             $userRepository = new UserRepository($this->database);
-            $check = $userRepository->userExist($username);
+            $check = $userRepository->userEmailExist($email);
             if ($check == TRUE) {
-                echo "<script>alert('Dieser Username existiert bereits');</script>";
+                echo "<script>alert('Dieser Email existiert bereits');</script>";
                 $this->view->setview('./views/user/registration.php');
             }
             
@@ -52,15 +52,15 @@ class UserController extends AbstractController {
     //wenn der Login-Button auf der Anmelde Seite gedrückt wird
     public function successfulloginAction() {
 
-        //Wenn Username als auch PW gesetzt sind
-        if(isset($_POST['benutzername']) && isset($_POST['passwort'])) {
+        //Wenn Email als auch PW gesetzt sind
+        if(isset($_POST['email']) && isset($_POST['passwort'])) {
 
             //UserRepository für die Abfrage öffnen
             $userRepository = new UserRepository($this->database);
-            $check = $userRepository->checkPassword($_POST['benutzername'], $_POST['passwort']);
+            $check = $userRepository->checkPassword($_POST['email'], $_POST['passwort']);
             $hashedPassword = hash('sha256', $_POST['passwort']);
-            //Wenn Passwort und Username übereinstimmen wird die Variable auf true gesetzt
-            if(!empty($check) && $check[0]['Passwort'] == $hashedPassword && $check[0]['Username'] == $_POST['benutzername']) {
+            //Wenn Passwort und Email übereinstimmen wird die Variable auf true gesetzt
+            if(!empty($check) && $check[0]['Passwort'] == $hashedPassword && $check[0]['Email'] == $_POST['email']) {
                 $_SESSION['isLoggin'] = true;
                 //Speichern der UserID für das Dashbord
                 $_SESSION['UserID'] = $check[0]['UserID'];
