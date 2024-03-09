@@ -1,5 +1,3 @@
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -12,6 +10,10 @@
     const URL = "https://teachablemachine.withgoogle.com/models/3G9tWRb1x/";
 
     let model, webcam, labelContainer, maxPredictions;
+
+    window.onload = function() {
+        init();
+    }
 
     // Load the image model and setup the webcam
     async function init() {
