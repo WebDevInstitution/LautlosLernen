@@ -1,24 +1,44 @@
-<button type="submit" onclick="sendUserGuessToServer(userGuess)">Antwort best&auml;tigen</button>
+<button type="submit" onclick="checkAnswer()">Antwort best&auml;tigen</button>
 
 <?php
-include "../../config.php";
-include "../../Framework/dashboardRepository.php";
+include __DIR__ . "../../config.php";
+include __DIR__ . "../../Framework/dashboardRepository.php";
 
-$date = date("Y-m-d");
+class defaultLearning {
+    private $dashboardRepo;
+    private $letterToGuess;
+    private $date;
 
-$letterToGuess = $letters[random_int(0, count($letters))];
+    public function __construct() {
+        global $config;
+        $this->dashboardRepo = new dashboardRepository($config);
+        $this->letterToGuess = $this->generateLetterToGuess();
+        $this->date = $this->getDate();
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $userGuess = $_POST["userGuess"];
-}
+    private function generateLetterToGuess() {
+        $letters = range('A', 'Z');
+        return $letters[random_int(0, count($letters) - 1)]; // TODO: Anpassen
+    }
 
-if ($userGuess == $letterToGuess){
-    incrementCorrectAnswer("", $letterToGuess, $date);
-} else {
-    incrementWrongAnswer("", $letterToGuess, $date);
+    private function getDate() {
+        return date("Y-m-d");
+    }
+    
+    public function checkAnswer() {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $userGuess = $_POST["userGuess"];
+            if ($userGuess == $this->letterToGuess){
+                $this->dashboardRepo->incrementCorrectAnswer("", $this->letterToGuess, $this->date);
+            } else {
+                $this->dashboardRepo->incrementWrongAnswer("", $this->letterToGuess, $this->date);
+            }
+        }
+    }
 }
 
 ?>
+
 
 <div id="webcam-container"></div>
 <div id="label-container"></div>
