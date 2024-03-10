@@ -1,3 +1,25 @@
+<button type="submit" onclick="sendUserGuessToServer(userGuess)">Antwort best&auml;tigen</button>
+
+<?php
+include "../../config.php";
+include "../../Framework/dashboardRepository.php";
+
+$date = date("Y-m-d");
+
+$letterToGuess = $letters[random_int(0, count($letters))];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $userGuess = $_POST["userGuess"];
+}
+
+if ($userGuess == $letterToGuess){
+    incrementCorrectAnswer("", $letterToGuess, $date);
+} else {
+    incrementWrongAnswer("", $letterToGuess, $date);
+}
+
+?>
+
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -9,7 +31,7 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/3G9tWRb1x/";
 
-    let model, webcam, labelContainer, maxPredictions;
+    let model, webcam, labelContainer, maxPredictions, userGuess;
 
     window.onload = function() {
         init();
@@ -29,17 +51,13 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        webcam = new tmImage.Webcam(500, 500, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
 
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
     }
 
     async function loop() {
@@ -52,10 +70,28 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
+        let highestProbability = 0;
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            if (prediction[i].probability > highestProbability){
+                highestProbability = prediction[i].probability;
+                userGuess = prediction[i].className;
+            }else if (prediction[i].probability === highestProbability){
+                userGuess = "Error. Please try again.";
+            }
         }
+    }
+
+    // JavaScript AJAX-Anfrage
+    function sendUserGuessToServer(userGuess) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "default.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Antwort vom Server verarbeiten
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.send("userGuess=" + encodeURIComponent(userGuess));
     }
 </script>

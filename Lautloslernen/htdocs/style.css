@@ -124,6 +124,12 @@ th {
   width: 50%;
 }
 
+/* Versteckt den Output der Wahrscheinlichkeiten auf dem Learning Screen. */
+#label-container div {
+  display: none;
+}
+
+
 
 /* Stile für Bildschirme mit einer Breite von 600px oder weniger (z.B. Handys) */
 @media (max-width: 600px) {
