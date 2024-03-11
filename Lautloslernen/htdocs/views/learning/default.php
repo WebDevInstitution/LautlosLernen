@@ -1,8 +1,9 @@
 <button type="submit" onclick="checkAnswer()">Antwort best&auml;tigen</button>
+<button type="submit" onclick="getLetterToUse()">Neuer Buchstabe</button>
 
 <?php
-include __DIR__ . "../../config.php";
-include __DIR__ . "../../Framework/dashboardRepository.php";
+include __DIR__ . "/../../config.php";
+include __DIR__ . "/../../Framework/dashboardRepository.php";
 
 class defaultLearning {
     private $dashboardRepo;
@@ -11,14 +12,14 @@ class defaultLearning {
 
     public function __construct() {
         global $config;
+        global $letters;
         $this->dashboardRepo = new dashboardRepository($config);
-        $this->letterToGuess = $this->generateLetterToGuess();
         $this->date = $this->getDate();
     }
 
-    private function generateLetterToGuess() {
-        $letters = range('A', 'Z');
-        return $letters[random_int(0, count($letters) - 1)]; // TODO: Anpassen
+    private function getLetterToGuess() {
+        print("Letter chosen.");
+        return $letterToGuess = $letters[random_int(0, count($letters))];
     }
 
     private function getDate() {
@@ -108,7 +109,6 @@ class defaultLearning {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                // Antwort vom Server verarbeiten
                 console.log(xhr.responseText);
             }
         };
