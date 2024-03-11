@@ -1,4 +1,4 @@
-<button type="submit" onclick="checkAnswer()">Antwort best&auml;tigen</button>
+<button type="submit" onclick="checkAnswer(); getLetterToUse();">Antwort best&auml;tigen</button>
 <button type="submit" onclick="getLetterToUse()">Neuer Buchstabe</button>
 
 <?php
