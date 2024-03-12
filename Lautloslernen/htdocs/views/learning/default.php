@@ -1,7 +1,8 @@
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <?php
 include __DIR__ . "/../../config.php";
 include __DIR__ . "/../../Framework/dashboardRepository.php";
@@ -34,7 +35,7 @@ class defaultLearning {
     }
     
     public function checkAnswer() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["userGuess"])) {
             $userGuess = $_POST["userGuess"];
             if ($userGuess == $this->letterToGuess){
                 $this->dashboardRepo->incrementCorrectAnswer("", $this->letterToGuess, $this->date);

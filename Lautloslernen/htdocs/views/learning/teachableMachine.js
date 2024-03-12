@@ -49,7 +49,7 @@ async function predict() {
             highestProbability = prediction[i].probability;
             userGuess = prediction[i].className;
         }else if (prediction[i].probability === highestProbability){
-            userGuess = "Error. Please try again.";
+            userGuess = "error";
         }
     }
 }
@@ -59,10 +59,14 @@ function sendUserGuessToServer(userGuess) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "default.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    const encodedUserGuess = "userGuess=" + encodeURIComponent(userGuess);
+
     xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText);
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                xhr.send(encodedUserGuess);
+            }
         }
-    };
-    xhr.send("userGuess=" + encodeURIComponent(userGuess));
+    }
 }
