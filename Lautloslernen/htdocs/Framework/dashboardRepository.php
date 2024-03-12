@@ -1,6 +1,5 @@
 <?php
-include './models/dashboardModel.php';
-
+include '../models/dashboardModel.php';
 class dashboardRepository extends AbstractRepository {
     public function __construct($database) {
         parent::__construct($database);

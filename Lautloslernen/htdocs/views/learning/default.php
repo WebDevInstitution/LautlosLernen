@@ -1,6 +1,7 @@
-<button type="submit" onclick="checkAnswerAndGetNewLetter()">Antowort best&auml;igen</button>
-<button type="submit" onclick="getLetterToUse()">Neuer Buchstabe</button>
 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
 <?php
 include __DIR__ . "/../../config.php";
 include __DIR__ . "/../../Framework/dashboardRepository.php";
@@ -25,7 +26,6 @@ class defaultLearning {
     }
 
     private function getLetterToGuess() {
-        print("Letter chosen.");
         $this->letterToGuess = $this->letters[random_int(0, count($this->letters) - 1)];
     }
 
@@ -44,7 +44,45 @@ class defaultLearning {
         }
     }
 }
+
+$deafultLearning = new defaultLearning();
+
+if (isset($_POST["action"]) && $_POST["action"] === "callCheckAnswerAndGetNewLetter") {
+    $deafultLearning->checkAnswerAndGetNewLetter();
+}
+
+if (isset($_POST["action"]) && $_POST["action"] === "callGetLetterToGuess") {
+    $deafultLearning->checkAnswerAndGetNewLetter();
+}
+
 ?>
+
+<button type="submit" onclick="callCheckAnswerAndGetNewLetter()">Antowort best&auml;igen</button>
+<button type="submit" onclick="callGetLetterToGuess()">Neuer Buchstabe</button>
+
+<script>
+    function callCheckAnswerAndGetNewLetter() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/views/learning/default.php",
+            data: {action: "callCheckAnswerAndGetNewLetter"},
+            success:function(html){
+                alert(html);
+            }
+        });
+    }
+
+    function callGetLetterToGuess(){
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/views/learning/default.php",
+            data: {action: "callGetLetterToGuess"},
+            success:function(html){
+                alert(html);
+            }
+        });
+    }
+</script>
 
 <div id="webcam-container"></div>
 <div id="label-container"></div>
