@@ -1,5 +1,6 @@
 <?php
-include './models/dashboardModel.php';
+include __DIR__ ."/../models/dashboardModel.php";
+include __DIR__ ."/AbstractRepository.php";
 
 class dashboardRepository extends AbstractRepository {
     public function __construct($database) {
