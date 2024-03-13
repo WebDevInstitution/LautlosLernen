@@ -37,9 +37,9 @@ class learningController extends AbstractController {
         if (isset($_POST["userGuess"])) {
             $userGuess = $_POST["userGuess"];
             if ($userGuess == $this->letterToGuess){
-                $this->dashboardRepo->incrementCorrectAnswer("", $this->letterToGuess, $this->date);
+                $this->dashboardRepo->incrementCorrectAnswer($_SESSION["UserID"], $this->letterToGuess, $this->date);
             } else {
-                $this->dashboardRepo->incrementWrongAnswer("", $this->letterToGuess, $this->date);
+                $this->dashboardRepo->incrementWrongAnswer($_SESSION["UserID"], $this->letterToGuess, $this->date);
             }
         }
     }

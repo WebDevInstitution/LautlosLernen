@@ -29,7 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 5 var(--header-spacing);
-  background-color: #000;
+  background-color: #a09f8b;
   color: white;
 }
 
