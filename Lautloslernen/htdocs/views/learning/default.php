@@ -63,26 +63,26 @@ if (isset($_POST["action"]) && $_POST["action"] === "callGetLetterToGuess") {
 
 <script>
     function callCheckAnswerAndGetNewLetter() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/views/learning/default.php",
-            data: {action: "callCheckAnswerAndGetNewLetter"},
-            success:function(html){
-                alert(html);
-            }
-        });
-    }
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:8080/views/learning/default.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    xhr.send("action=callCheckAnswerAndGetNewLetter");
+                }
+            };
+        }
 
-    function callGetLetterToGuess(){
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/views/learning/default.php",
-            data: {action: "callGetLetterToGuess"},
-            success:function(html){
-                alert(html);
-            }
-        });
-    }
+        function callGetLetterToGuess() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:8080/views/learning/default.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    xhr.send("action=callGetLetterToGuess");
+                }
+            };
+        }
 </script>
 
 <div id="webcam-container"></div>
