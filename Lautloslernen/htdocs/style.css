@@ -11,7 +11,7 @@ body {
 }
 
 .option, details:not(:checked) {
-  background-color: rgb(145, 129, 129);
+  background-color: #2E8B57;
 }
 
 .container, header, main {
@@ -19,20 +19,21 @@ body {
 }
 
 .container {
-  display: flex; /* macht .container zu einem Flex-Container */
-  justify-content: center; /* zentriert die Elemente horizontal */
-  align-items: center; /* zentriert die Elemente vertikal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 header {
   display: flex;
   justify-content: space-between;
   padding: 5 var(--header-spacing);
-  background-color: #a09f8b;
+  background-color: #1E3A5F;
   color: white;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
 }
-
 
 header .search, header .avatar {
   display: inline-block;
@@ -41,7 +42,7 @@ header .search, header .avatar {
 }
 
 .nav-link {
-  background-color: grey;
+  background-color: #2E8B57;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -54,11 +55,8 @@ header .search, header .avatar {
 }
 
 .nav-link:hover {
-  background-color: darkgrey;
+  background-color: #00CED1;
 }
-
-
-
 
 main {
   background: white;
@@ -66,6 +64,8 @@ main {
   padding-left: 3%;
   padding-right: 3%;
   margin-top: 5px;
+  margin-bottom: 8%;
+  padding-top: 60px;
 }
 
 aside {
@@ -75,12 +75,18 @@ aside {
 footer {
   background: var(--gradient-start);
   color: black;
-  padding: 2em;
+  padding: 1em;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   width: 100%;
   font-size: 18px;
-  background-color: beige;
+  background-color: rgb(30, 58, 95);
+  position: fixed; 
+  bottom: 0; 
 }
+
 
 .sidenav {
   height: 100%;
@@ -89,37 +95,29 @@ footer {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color:rgb(145, 129, 129);
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  border-radius: 18px;
 }
-
 
 div.dynamic {
-  border: 1px solid #000;
+  border: 1px solid #2E8B57; 
   padding: 1rem;
 }
-
-
 
 table {
   border-collapse: separate;
   width: 100%;
-  border: 10px rgb(142, 142, 142);
+  border: 10px solid #8A8A8A; 
   margin: auto;
   border-radius: 30px;
   overflow: hidden;
 }
 
 table a:hover {
-  color: #E62536;
+  color: #FFD700; 
 }
 
 th {
-  border: 10px black;
-  background-color: rgb(152, 152, 152);
+  border: 10px solid black;
+  background-color: #989898; 
   color: white;
   width: 50%;
 }
@@ -128,6 +126,7 @@ th {
 #label-container div {
   display: none;
 }
+
 
 
 
