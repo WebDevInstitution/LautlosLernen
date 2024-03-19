@@ -74,8 +74,8 @@ aside {
 
 footer {
   background: var(--gradient-start);
-  color: black;
-  padding: 1em;
+  color: white;
+  padding: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
