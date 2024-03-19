@@ -97,6 +97,15 @@ footer {
   left: 0;
 }
 
+nav ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+nav ul li a:hover {
+  color: #1E3A5F;
+  text-decoration: underline;
+}
+
 div.dynamic {
   border: 1px solid #2E8B57; 
   padding: 1rem;
