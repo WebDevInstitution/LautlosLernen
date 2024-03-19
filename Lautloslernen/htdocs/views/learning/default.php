@@ -22,6 +22,9 @@
         }
 </script>
 
+<br />
+<br />
+
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 
