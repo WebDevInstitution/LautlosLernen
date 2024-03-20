@@ -1,22 +1,24 @@
 <div class="header" style="background-color: #1E3A5F; color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
 
-    <div class="logo" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); height: 50px;">
-        <a href="http://localhost:8080"><img src="/img/lautloslernen.png" style="width: 100%; height: auto; border-radius: 10px; height: 100%;" alt="Lautlos Lernen"></a>
+    <div class="logo" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <a href="http://localhost:8080" style="text-decoration: none;">
+            <img src="/img/LogoLtransparent.png" style="width: 120px; height: auto; border-radius: 10px;" alt="Lautlos Lernen">
+        </a>
     </div>
 
-    <div class="nav" style="display: flex; margin-right: 40px;">
-        <a href="/" class="nav-link" style="background-color: #2E8B57; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Home</a>
+    <div class="nav" style="display: flex; gap: 20px;">
+        <a href="/" class="nav-link">Home</a>
        <?php if(isset($_SESSION['isLoggin']) && $_SESSION['isLoggin'] == true): ?>
-            <a href="/?c=learning" class="nav-link" style="background-color: #00CED1; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Lernen</a>
-            <a href="/?c=dashboard" class="nav-link" style="background-color: #00CED1; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Lernerfolg</a>
-            <a href="/?c=letter" class="nav-link" style="background-color: #00CED1; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Buchstaben</a>
-            <a href="/?a=logoff&c=user" class="nav-link" style="background-color: #FFD700; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Abmelden</a>
+            <a href="/?c=learning" class="nav-link">Lernen</a>
+            <a href="/?c=dashboard" class="nav-link">Lernerfolg</a>
+            <a href="/?c=letter" class="nav-link">Buchstaben</a>
+            <a href="/?a=logoff&c=user" class="nav-link">Abmelden</a>
 
-            <?php else: ?>
-                <a href="/?a=registration&c=user" class="nav-link" style="background-color: #FFA500; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Registrieren</a>
-                <a href="/?a=login&c=user" class="nav-link" style="background-color: #FFA500; border: none; color: #FFFFFF; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 16px; margin: 4px 2px; cursor: pointer;">Anmelden</a>
+       <?php else: ?>
+            <a href="/?a=registration&c=user" class="nav-link">Registrieren</a>
+            <a href="/?a=login&c=user" class="nav-link">Anmelden</a>
 
-            <?php endif; ?>
+       <?php endif; ?>
     </div>
 
     <div class="avatar">
