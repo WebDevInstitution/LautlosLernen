@@ -133,7 +133,7 @@
 <table style="margin: auto;">
     <tr>
         <td style="text-align: center;">
-            <img src="https://cdn-icons-png.flaticon.com/128/8142/8142749.png" alt="Buchstabe M" width="200">
+            <img src="https://cdn-icons-png.flaticon.com/128/9326/9326491.png" alt="Buchstabe M" width="200">
         </td>
         <td style="text-align: center;">
             <img src="/img/GebärdenBuchstaben/m.png" alt="Zeichen M" width="200" height="200">
@@ -268,7 +268,7 @@
             <img src="https://cdn-icons-png.flaticon.com/128/3666/3666233.png" alt="Buchstabe Y" width="200">
         </td>
         <td style="text-align: center;">
-            <img sc="/img/GebärdenBuchstaben/y.png" alt="Zeichen Y" width="200" height="200">
+            <img src="/img/GebärdenBuchstaben/y.png" alt="Zeichen Y" width="200" height="200">
         </td>
     </tr>
 </table><br>
