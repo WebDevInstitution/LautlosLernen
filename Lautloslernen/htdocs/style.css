@@ -51,7 +51,7 @@ header .search, header .avatar {
   font-size: 16px;
   margin: 0 5px;
   border-radius: 5px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .nav-link:hover {
