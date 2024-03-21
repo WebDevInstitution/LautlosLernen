@@ -57,7 +57,7 @@ async function predict() {
 // JavaScript AJAX-Anfrage
 function sendUserGuessToServer(userGuess) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "default.php", true);
+    xhr.open("POST", "../../controllers/learningController.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     const encodedUserGuess = "userGuess=" + encodeURIComponent(userGuess);
