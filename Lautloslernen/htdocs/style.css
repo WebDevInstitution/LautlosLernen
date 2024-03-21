@@ -49,8 +49,6 @@ header .search, header .avatar {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0 5px;
-  border-radius: 5px;
   transition: 0.5s;
 }
 
@@ -82,7 +80,7 @@ footer {
   text-align: center;
   width: 100%;
   font-size: 18px;
-  background-color: rgb(30, 58, 95);
+  background-color: #4d73a6;
   position: fixed; 
   bottom: 0; 
 }
@@ -95,6 +93,10 @@ footer {
   z-index: 1;
   top: 0;
   left: 0;
+}
+
+nav {
+  align-items: center;
 }
 
 nav ul li a {
