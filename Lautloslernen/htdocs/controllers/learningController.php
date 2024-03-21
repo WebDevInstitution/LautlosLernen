@@ -25,7 +25,7 @@ class learningController extends AbstractController {
         $this->getLetterToGuess();
     }
 
-    private function getLetterToGuess() {
+    public function getLetterToGuess() {
         $this->letterToGuess = $this->letters[random_int(0, count($this->letters) - 1)];
     }
 
@@ -52,5 +52,5 @@ if (isset($_POST["action"]) && $_POST["action"] === "callCheckAnswerAndGetNewLet
 }
 
 if (isset($_POST["action"]) && $_POST["action"] === "callGetLetterToGuess") {
-    $learningController->checkAnswerAndGetNewLetter();
+    $learningController->getLetterToGuess();
 }
