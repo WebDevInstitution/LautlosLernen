@@ -64,7 +64,6 @@ async function predict() {
 function sendUserGuessToServer(userGuess) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/../controllers/learningController.php", true);
-    //xhr.open("POST", "./controllers/learningController.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.onreadystatechange = function() {
