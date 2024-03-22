@@ -30,7 +30,7 @@ class dashboardRepository extends AbstractRepository {
         Null AS buchstabe,
         SUM(richtige_antworten) AS richtige_antworten,
         SUM(falsche_antworten) AS falsche_antworten 
-        FROM Alphabet_Dashboard 
+        FROM Dashboard 
         WHERE user_id = ' . $id . '
         GROUP BY datum
         ORDER BY datum DESC;'; // Nach Datum absteigend sortieren
@@ -46,7 +46,7 @@ class dashboardRepository extends AbstractRepository {
     //zum Test wird nie genutzt
 /*     public function getALL(){
         //aus DB abrufen
-        $sql = 'select * from Alphabet_Dashboard';
+        $sql = 'select * from Dashboard';
         $data = $this->database->query($sql);
         $result = [];
         //ins Model übertragen
@@ -60,7 +60,7 @@ class dashboardRepository extends AbstractRepository {
     //für die Gesamtantworten
     public function getTotalAnswersByUser($userId) {
         // SQL-Abfrage, um die gesamten richtigen und falschen Antworten für einen bestimmten Benutzer abzurufen
-        $sql = "SELECT SUM(richtige_antworten) AS total_correct_answers, SUM(falsche_antworten) AS total_wrong_answers FROM Alphabet_Dashboard WHERE user_id = $userId";
+        $sql = "SELECT SUM(richtige_antworten) AS total_correct_answers, SUM(falsche_antworten) AS total_wrong_answers FROM Dashboard WHERE user_id = $userId";
     
         // Ausführung der Abfrage
         $data = $this->database->query($sql);
@@ -82,7 +82,7 @@ class dashboardRepository extends AbstractRepository {
         $sql = "SELECT buchstabe, 
                        SUM(richtige_antworten) AS total_correct_answers, 
                        SUM(falsche_antworten) AS total_wrong_answers 
-                FROM Alphabet_Dashboard 
+                FROM Dashboard 
                 WHERE user_id = $userId 
                 GROUP BY buchstabe";
     
@@ -119,10 +119,10 @@ class dashboardRepository extends AbstractRepository {
         
         if ($existingEntry) {
             // Wenn ein Eintrag für dieses Datum vorhanden ist, erhöhe die richtige Antwort um eins
-            $sql = "UPDATE Alphabet_Dashboard SET richtige_antworten = richtige_antworten + 1 WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
+            $sql = "UPDATE Dashboard SET richtige_antworten = richtige_antworten + 1 WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
         } else {
             // Wenn kein Eintrag für dieses Datum vorhanden ist, erstelle einen neuen Eintrag
-            $sql = "INSERT INTO Alphabet_Dashboard (user_id, buchstabe, richtige_antworten, falsche_antworten, datum) VALUES ($userId, '$letter', 1, 0, '$date')";
+            $sql = "INSERT INTO Dashboard (user_id, buchstabe, richtige_antworten, falsche_antworten, datum) VALUES ($userId, '$letter', 1, 0, '$date')";
         }
         
         // Ausführen der SQL-Abfrage
@@ -140,10 +140,10 @@ class dashboardRepository extends AbstractRepository {
         
         if ($existingEntry) {
             // Wenn ein Eintrag für dieses Datum vorhanden ist, erhöhe die falsche Antwort um eins
-            $sql = "UPDATE Alphabet_Dashboard SET falsche_antworten = falsche_antworten + 1 WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
+            $sql = "UPDATE Dashboard SET falsche_antworten = falsche_antworten + 1 WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
         } else {
             // Wenn kein Eintrag für dieses Datum vorhanden ist, erstelle einen neuen Eintrag
-            $sql = "INSERT INTO Alphabet_Dashboard (user_id, buchstabe, richtige_antworten, falsche_antworten, datum) VALUES ($userId, '$letter', 0, 1, '$date')";
+            $sql = "INSERT INTO Dashboard (user_id, buchstabe, richtige_antworten, falsche_antworten, datum) VALUES ($userId, '$letter', 0, 1, '$date')";
         }
         
         // Ausführen der SQL-Abfrage
@@ -153,7 +153,7 @@ class dashboardRepository extends AbstractRepository {
     //wird für das Hochsetzten der falschen bzw. richtigen Antworten benötig. Mit der Methode kann man herausfinden, ob Einträge vorhanden sind für ein Datum, Buchstabe und User
     private function getDashboardEntryByDate($userId, $letter, $date) {
         // SQL-Abfrage, um nach einem Eintrag für den bestimmten Nutzer, Buchstaben und Datum zu suchen
-        $sql = "SELECT * FROM Alphabet_Dashboard WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
+        $sql = "SELECT * FROM Dashboard WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
         
         // Ausführen der SQL-Abfrage
         $data = $this->database->query($sql);

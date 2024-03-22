@@ -41,32 +41,40 @@ async function loop() {
 
 // run the webcam image through the image model
 async function predict() {
-    // predict can take in an image, video or canvas html element
+    // predict kann ein Bild-, Video- oder Canvas-HTML-Element entgegennehmen
     const prediction = await model.predict(webcam.canvas);
     let highestProbability = 0;
     for (let i = 0; i < maxPredictions; i++) {
         if (prediction[i].probability > highestProbability){
             highestProbability = prediction[i].probability;
             userGuess = prediction[i].className;
-        }else if (prediction[i].probability === highestProbability){
+        } else if (prediction[i].probability === highestProbability){
             userGuess = "error";
         }
     }
+
+    // Testausgabe
+    console.log("userGuess:", userGuess);
+
+    // userGuess an den Server senden
+    sendUserGuessToServer(userGuess);
 }
 
 // JavaScript AJAX-Anfrage
 function sendUserGuessToServer(userGuess) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "../../controllers/learningController.php", true);
+    xhr.open("POST", "/../controllers/learningController.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    const encodedUserGuess = "userGuess=" + encodeURIComponent(userGuess);
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                xhr.send(encodedUserGuess);
+                // Hier solltest du die Daten senden, nachdem du den Status überprüft hast
+                console.log(xhr.responseText); // Zum Testen: Ausgabe der Serverantwort in der Konsole
             }
         }
     }
+
+    const encodedUserGuess = "userGuess=" + encodeURIComponent(userGuess);
+    xhr.send(encodedUserGuess); // Hier sendest du die Daten
 }

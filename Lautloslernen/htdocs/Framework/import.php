@@ -26,11 +26,11 @@ public function createTableUser(){
     $this->database->query($sql);
 }
 
-public function createTableAlphabet_Dashbord(){
+public function createTableDashbord(){
 
-    //SQL um die Tabelle Alphabet_Dashboard zu erstellen
+    //SQL um die Tabelle Dashboard zu erstellen
     $sql= "
-    CREATE TABLE Alphabet_Dashboard (
+    CREATE TABLE Dashboard (
         id INT AUTO_INCREMENT PRIMARY KEY,
         user_id INT,
         datum DATE,
@@ -44,6 +44,39 @@ public function createTableAlphabet_Dashbord(){
     
 }
 
+public function createTableAlphabet(){
+    $sql="
+    CREATE TABLE Letters (
+        letter_id INT AUTO_INCREMENT PRIMARY KEY,
+        letter CHAR(1) NOT NULL
+    );    
+    ";
+
+    $this->database->query($sql);
+}
+
+public function insertIntoLetters(){
+    $sql="
+    INSERT INTO Letters (letter) VALUES ('A');
+    INSERT INTO Letters (letter) VALUES ('C');
+    INSERT INTO Letters (letter) VALUES ('H');
+    INSERT INTO Letters (letter) VALUES ('J');
+    INSERT INTO Letters (letter) VALUES ('L');
+    INSERT INTO Letters (letter) VALUES ('M');
+    INSERT INTO Letters (letter) VALUES ('U');
+    ";
+    $this->database->query($sql);
+}
+
+public function dropTables(){
+    $sqlDropUser = "DROP TABLE IF EXISTS User;";
+    $sqlDropDashbord =  "DROP TABLE IF EXISTS Dashboard;";
+    $sqlDropAlphabet = "DROP TABLE IF EXISTS Letters;";
+    $this->database->query($sqlDropUser);
+    $this->database->query($sqlDropDashbord);
+    $this->database->query($sqlDropAlphabet);
+}
+
 //wird in der index Datei aufgerufen um zu prüfen, ob die Tabellen existieren -> erster aufruf der Webseite
 function pruefe_tabelle_in_db() {
     
@@ -55,8 +88,11 @@ function pruefe_tabelle_in_db() {
     $sql = "SHOW TABLES";
     $data = $this->database->query($sql);
     if ($data==NULL) {
+        $this->dropTables();
         $this->createTableUser();
-        $this->createTableAlphabet_Dashbord();
+        $this->createTableDashbord();
+        $this->createTableAlphabet();
+        $this->insertIntoLetters();
     }
 }
 }
