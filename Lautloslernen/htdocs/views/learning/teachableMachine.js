@@ -53,15 +53,12 @@ async function predict() {
         }
     }
 
-    // Testausgabe
-    console.log("userGuess:", userGuess);
-
     // userGuess an den Server senden
-    sendUserGuessToServer(userGuess);
+    await sendUserGuessToServer(userGuess);
 }
 
 // JavaScript AJAX-Anfrage
-function sendUserGuessToServer(userGuess) {
+async function sendUserGuessToServer(userGuess) {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/../controllers/learningController.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -69,12 +66,11 @@ function sendUserGuessToServer(userGuess) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Hier solltest du die Daten senden, nachdem du den Status überprüft hast
-                console.log(xhr.responseText); // Zum Testen: Ausgabe der Serverantwort in der Konsole
+                console.log('Request successfully completed.');
+            } else {
+                console.error('Error: Request failed with status ' + xhr.status);
             }
         }
     }
-
-    const encodedUserGuess = "userGuess=" + encodeURIComponent(userGuess);
-    xhr.send(encodedUserGuess); // Hier sendest du die Daten
+    xhr.send("userGuess=" + encodeURIComponent(userGuess));
 }
