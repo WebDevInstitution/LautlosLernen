@@ -14,11 +14,11 @@
             <?php echo $letter->getLetter(); ?></p>
         </div>
     <?php endforeach; ?>
-    
+
 </div>
 
 <form action="/?a=checkAnswer&c=learning" method="post">
-    <fieldset>    
+    <fieldset>
         <!-- Verstecktes Eingabefeld für den Buchstabenwert -->
         <input type="hidden" name="letterToGuess" value="<?php echo $letter->getLetter(); ?>">
         <input type="submit" value="Antwort bestätigen"><br><br>
@@ -31,6 +31,3 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://localhost:8080/views/learning/teachableMachine.js"></script>
-
-
-
