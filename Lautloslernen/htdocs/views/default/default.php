@@ -39,5 +39,4 @@
         Auf unserer Webseite bieten wir eine einzigartige Möglichkeit, die Gebärdensprache auf eine interaktive und effektive Weise zu erlernen.
         <br>Dank unserer KI-gestützten Plattform kannst Du die Grundlagen und Feinheiten dieser faszinierenden Sprache in Deinem eigenen Tempo und nach Deinen individuellen Bedürfnissen erlernen.
     </p>
-    <iframe width="800" height="450" src="https://www.youtube.com/embed/Cn2Nle9Vca0?si=h7r2leCFcGF3UYRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </main>
