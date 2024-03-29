@@ -56,17 +56,21 @@ public function createTableAlphabet(){
 }
 
 public function insertIntoLetters(){
-    $sql="
-    INSERT INTO Letters (letter) VALUES ('A');
-    INSERT INTO Letters (letter) VALUES ('C');
-    INSERT INTO Letters (letter) VALUES ('H');
-    INSERT INTO Letters (letter) VALUES ('J');
-    INSERT INTO Letters (letter) VALUES ('L');
-    INSERT INTO Letters (letter) VALUES ('M');
-    INSERT INTO Letters (letter) VALUES ('U');
+    $sql = "
+    INSERT INTO Letters (letter) 
+    VALUES 
+        ('A'),
+        ('C'),
+        ('H'),
+        ('J'),
+        ('L'),
+        ('M'),
+        ('U')
     ";
+
     $this->database->query($sql);
 }
+
 
 public function dropTables(){
     $sqlDropUser = "DROP TABLE IF EXISTS User;";
