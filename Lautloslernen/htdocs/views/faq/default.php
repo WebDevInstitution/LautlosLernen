@@ -6,7 +6,7 @@
 
 <details>
   <summary>Wie viele verschiedene Gebärdensprachen gibt es?</summary>
-  <p> Es gibt Hunderte von Gebärdensprachen auf der ganzen Welt, wobei jede Region oder jedes Land ihre eigene Gebärdensprache hat. Beispiele sind American Sign Language (ASL) in den USA, British Sign Language (BSL) im Vereinigten Königreich und Deutsche Gebärdensprache (DGS) in Deutschland.</p>
+  <p> Es gibt Hunderte von Gebärdensprachen auf der ganzen Welt, wobei jede Region oder jedes Land ihre eigene Gebärdensprache hat. Beispiele sind American Sign Language (ASL) in den USA, British Sign Language (BSL) im Vereinigten Königreich und Deutsche Gebärdensprache (DGS) in der DACH Region.</p>
 </details>
 
 <details>
