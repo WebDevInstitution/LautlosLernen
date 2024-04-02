@@ -28,6 +28,18 @@ class letterRepository extends AbstractRepository {
         return $result;
     }
 
+    public function GetLetter($Letter){
+        $sql = "SELECT * FROM letters WHERE letter = '$Letter'";
+        $data = $this->database->query($sql);
+        $result = [];
+        // ins Model übertragen
+        foreach($data as $row) {
+            $result[] = $this->createLetterFromData($row);
+        }
+        return $result;
+    }
+    
+
     public function getnextLetter(){
         //aus DB abrufen
         $sql = '

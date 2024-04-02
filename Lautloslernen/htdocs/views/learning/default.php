@@ -6,6 +6,7 @@
     <?php foreach ($this->nextLetter as $letter): ?>
         <h3 style="margin-bottom: 10px;">Zeige diesen Buchstaben:</h3>
         <img src="<?php echo $letter->getBuchstabenBild(); ?>" alt="Buchstabe A" width="200">
+        <?php $_SESSION['lastShownLetter'] = $letter->getLetter();?>
     <?php endforeach; ?>
 </div>
 <br/>
@@ -15,6 +16,7 @@
 </form>
 <br/>
 
+<!-- Hier kommt die Webcam -->
 <div id="webcam-container"></div>
 
 <form id="answer-form" action="/?a=checkAnswer&c=learning" method="post">
