@@ -41,14 +41,15 @@ class letterRepository extends AbstractRepository {
     
 
     public function getnextLetter(){
+        $lastLetter = $_SESSION['lastShownLetter'];
         //aus DB abrufen
-        $sql = '
+        $sql = "
         SELECT *
         FROM letters
-        WHERE teachable = 1
+        WHERE teachable = 1 AND letter != '$lastLetter'
         ORDER BY RAND() 
-        LIMIT 1;
-        ';
+        LIMIT 1
+        ";
         $data = $this->database->query($sql);
         $result = [];
         //ins Model übertragen
