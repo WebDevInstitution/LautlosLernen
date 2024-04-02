@@ -6,7 +6,8 @@ class letterController extends AbstractController {
     }
 
     public function defaultAction(){
-        //Keine Aktionen
+        $letterRepository = new letterRepository($this->database);
+        $AllLetters = $letterRepository->getALL();
+        $this->view->AllLetters = $AllLetters;
     }
-
 }

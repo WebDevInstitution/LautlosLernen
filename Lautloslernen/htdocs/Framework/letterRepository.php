@@ -1,7 +1,4 @@
 <?php
-/* include_once __DIR__ ."/../models/dashboardModel.php";
-include_once __DIR__ ."/AbstractRepository.php"; */
-
 include_once __DIR__ ."/../models/letterModel.php";
 
 class letterRepository extends AbstractRepository {
@@ -10,12 +7,15 @@ class letterRepository extends AbstractRepository {
     }
 
     private function createLetterFromData($data) {
-        $letter = new letterModel();
+        $letter = new LetterModel();
         $letter->setLetter_id($data['letter_id']);
         $letter->setLetter($data['letter']);
+        $letter->setGebärdenBild($data['GebärdenBild']); 
+        $letter->setBuchstabenBild($data['BuchstabenBild']); 
+        $letter->setTeachable((bool) $data['Teachable']); 
         return $letter;
     }
-
+    
     public function getALL(){
         //aus DB abrufen
         $sql = 'select * from letters';
@@ -32,7 +32,8 @@ class letterRepository extends AbstractRepository {
         //aus DB abrufen
         $sql = '
         SELECT *
-        FROM letters 
+        FROM letters
+        WHERE teachable = 1
         ORDER BY RAND() 
         LIMIT 1;
         ';
@@ -44,7 +45,4 @@ class letterRepository extends AbstractRepository {
         }
         return $result;
     }
-
-
-
 }
