@@ -1,7 +1,10 @@
 <?php
-class letterModel {
+class LetterModel {
     private $letter_id;
     private $letter;
+    private $GebärdenBild;
+    private $BuchstabenBild;
+    private $Teachable;
 
     public function getLetter_id() {
         return $this->letter_id;
@@ -17,6 +20,30 @@ class letterModel {
 
     public function setLetter($letter) {
         $this->letter = $letter;
+    }
+
+    public function getGebärdenBild() {
+        return $this->GebärdenBild;
+    }
+
+    public function setGebärdenBild($GebärdenBild) {
+        $this->GebärdenBild = $GebärdenBild;
+    }
+
+    public function getBuchstabenBild() {
+        return $this->BuchstabenBild;
+    }
+
+    public function setBuchstabenBild($BuchstabenBild) {
+        $this->BuchstabenBild = $BuchstabenBild;
+    }
+
+    public function isTeachable() {
+        return $this->Teachable;
+    }
+
+    public function setTeachable($Teachable) {
+        $this->Teachable = $Teachable;
     }
 }
 

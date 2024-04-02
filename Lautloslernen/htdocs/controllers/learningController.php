@@ -13,34 +13,32 @@ class learningController extends AbstractController {
         $nextLetter = $LetterRepository->getnextLetter();
         $this->view->nextLetter = $nextLetter;
         $this->view->setView("views/learning/default.php");
-    }
+    } 
 
     public function checkAnswerAction(){
         $dashboardRepository = new DashboardRepository($this->database);
         $letterToGuess = $_POST['letterToGuess'];
         $date = date("Y-m-d");
-        echo "letterToGuess: $letterToGuess <br>";
+        $userGuess = -1;
     
-        // Check if the form is submitted via POST and if the userGuess is set
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["userGuess"])) {
-            $userGuess = $_POST["userGuess"];
-            echo "userGuess: $userGuess <br>";
-        } else {
-            // Handle the case when userGuess is not set
-            $userGuess = ""; // or any default value you prefer
-            echo "userGuess: <br>";
+        // Überprüfen, ob das Formular gesendet wurde und ob ein Benutzer-Guess übermittelt wurde
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["predictedLetter"])) {
+            $userGuess = $_POST["predictedLetter"];
         }
-    
-        echo "letterToGuess: $letterToGuess <br>";
-        echo "userGuess: $userGuess <br>";
     
         if ($userGuess == $letterToGuess){
             $dashboardRepository->incrementCorrectAnswer($_SESSION["UserID"], $letterToGuess, $date);
+            $popupMessage = "Deine Antwort war Richtig!";
         } else {
             $dashboardRepository->incrementWrongAnswer($_SESSION["UserID"], $letterToGuess, $date);
+            $popupMessage = "Leider war das nicht die richtige Antwort";
         }
         
+        // JavaScript Popup anzeigen
+        echo "<script>alert('$popupMessage');</script>";
+    
         $this->getNextLetterAction();
         $this->view->setView("views/learning/default.php");
-    }    
+    } 
+    
 }

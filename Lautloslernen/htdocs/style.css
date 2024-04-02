@@ -121,6 +121,32 @@ main {
   table a:hover {
     color: #4d73a6;
   }
+  
+  .button {
+    background-color: #4CAF50; /* Hintergrundfarbe */
+    border: none; /* Kein Rand */
+    color: white; /* Textfarbe */
+    padding: 15px 32px; /* Innenabstand */
+    text-align: center; /* Text zentriert */
+    text-decoration: none; /* Keine Unterstreichung */
+    display: inline-block; /* Inline-Block-Element */
+    font-size: 16px; /* Schriftgröße */
+    margin: 4px 2px; /* Außenabstand */
+    cursor: pointer; /* Zeigercursor */
+    border-radius: 8px; /* Abgerundete Ecken */
+    transition-duration: 0.4s; /* Übergangsdauer */
+  }
+
+    .button:hover {
+      background-color: #388e3c; /* Dunklere Hintergrundfarbe */
+  }
+
+  .button:active {
+      background-color: #1b5e20; /* Noch dunklere Hintergrundfarbe */
+      transform: scale(0.95); /* Verkleinerung um 5% */
+  }
+
+
 }
 
 aside {
@@ -140,15 +166,6 @@ footer {
   background-color: #4d73a6;
   position: fixed; 
   bottom: 0; 
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
 }
 
 nav {
@@ -187,69 +204,4 @@ div.dynamic {
 /* Versteckt den Output der Wahrscheinlichkeiten auf dem Learning Screen. */
 #label-container div {
   display: none;
-}
-
-
-/* Stile für Bildschirme mit einer Breite von 600px oder weniger (z.B. Handys) */
-@media (max-width: 600px) {
-  body {
-    background-color: #e0e0e0;
-  }
-  #big-content {
-      display: none;
-  }
-  #mobile-content {
-      display: block;
-  }
-  .header {
-      flex-direction: column;
-  }
-  .logo, .avatar {
-      display: none;
-  }
-  .search {
-      width: 100%;
-      order: 3;
-      padding: 15px 32px;
-      box-sizing: border-box;
-  }
-  .nav {
-      order: 2;
-  }
-  .nav a {
-      width: 100%;
-      box-sizing: border-box;
-  }
-}
-
-/* Stile für Bildschirme mit einer Breite von mehr als 600px (z.B. Desktops und Tablets) */
-@media (min-width: 601px) {
-  body {
-    background-color: #ffffff;
-  }
-  #big-content {
-      display: block;
-  }
-  #mobile-content {
-      display: none;
-  }
-  .header {
-      flex-direction: row;
-  }
-  .logo img {
-      width: calc(var(--sidebar-width) - 2 * var(--header-spacing));
-  }
-  .search {
-      width: auto;
-      order: 2;
-  }
-  .nav {
-      order: 1;
-  }
-  .nav a {
-      width: auto;
-  }
-  .avatar {
-      order: 3;
-  }
 }
