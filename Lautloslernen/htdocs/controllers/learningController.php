@@ -29,16 +29,21 @@ class learningController extends AbstractController {
         if ($userGuess == $letterToGuess){
             $dashboardRepository->incrementCorrectAnswer($_SESSION["UserID"], $letterToGuess, $date);
             $popupMessage = "Deine Antwort war Richtig!";
+                    // JavaScript Popup anzeigen
+            echo "<script>alert('$popupMessage');</script>";
+
+            $this->getNextLetterAction();
+            $this->view->setView("views/learning/default.php");
+
         } else {
+
             $dashboardRepository->incrementWrongAnswer($_SESSION["UserID"], $letterToGuess, $date);
-            $popupMessage = "Leider war das nicht die richtige Antwort";
+            $lastLetter = $_SESSION['lastShownLetter'];
+            $LetterRepository = new LetterRepository($this->database);
+            $Letter = $LetterRepository->GetLetter($lastLetter);
+            $this->view->Letter = $Letter;
+            $this->view->setView("views/learning/wrongAnswer.php");
         }
         
-        // JavaScript Popup anzeigen
-        echo "<script>alert('$popupMessage');</script>";
-    
-        $this->getNextLetterAction();
-        $this->view->setView("views/learning/default.php");
     } 
-    
 }
