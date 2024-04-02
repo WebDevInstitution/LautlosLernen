@@ -43,19 +43,6 @@ class dashboardRepository extends AbstractRepository {
         }
         return $result;
     }   
-    //zum Test wird nie genutzt
-/*     public function getALL(){
-        //aus DB abrufen
-        $sql = 'select * from Dashboard';
-        $data = $this->database->query($sql);
-        $result = [];
-        //ins Model übertragen
-        foreach($data as $row) {
-            $result[] = $this->createdashboardFromData($row);
-        }
-        return $result;
-    }
-   */
 
     //für die Gesamtantworten
     public function getTotalAnswersByUser($userId) {
