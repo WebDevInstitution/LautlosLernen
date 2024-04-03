@@ -27,6 +27,10 @@ if (!isset($_SESSION['isLoggin'])) {
     $_SESSION['isLoggin'] = false;
 }
 
+if (!isset($_SESSION['lastShownLetter'])) {
+    $_SESSION['lastShownLetter'] = '';
+}
+
 // define default fallbacks
 const DEFAULT_CONTROLLER = 'default';
 const DEFAULT_ACTION = 'default';
