@@ -5,7 +5,7 @@
 
 
 
-<h3 style="margin-bottom: 10px;">Prozentuale richtige Antworten pro Buchstabe:</h3>
+<h3>Prozentuale richtige Antworten pro Buchstabe:</h3>
 <div style="overflow-x: auto; white-space: nowrap; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
     <?php foreach ($this->percentageCorrectAnswers as $letter => $percentage): ?>
         <?php
@@ -32,10 +32,6 @@
         </div>
     <?php endforeach; ?>
 </div>
-
-
-
-
 
 <!-- Laden Sie die Chart.js-Bibliothek -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

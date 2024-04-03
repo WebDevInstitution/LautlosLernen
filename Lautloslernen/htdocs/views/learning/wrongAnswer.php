@@ -1,16 +1,17 @@
-<h3 style="margin-bottom: 10px;">Das war leider die falsche Antwort.<br/>Richtige wäre:</h3>
-
-
+<h3> 
+    Das war leider die falsche Antwort.<br/>
+    Richtige wäre:
+</h3>
 <br>
 
 <div class="letterTable">
     <?php foreach ($this->Letter as $letter): ?>
-        <table style="margin: auto;">
+        <table>
         <tr>
-            <td style="text-align: center;">
+            <td>
                 <img src="<?php echo $letter->getBuchstabenBild(); ?>" alt="Buchstabe A" width="200">
             </td>
-            <td style="text-align: center;">
+            <td>
                 <img src="<?php echo $letter->getGebärdenBild(); ?>" alt="Zeichen A" width="200" height="200">
             </td>
         </tr>

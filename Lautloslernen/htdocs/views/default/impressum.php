@@ -1,4 +1,3 @@
-
 <h1>Impressum und Haftungsausschluss</h1>
 
 <h2>Verantwortlich für den Inhalt:</h2>
