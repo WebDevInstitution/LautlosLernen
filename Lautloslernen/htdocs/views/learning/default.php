@@ -1,6 +1,5 @@
 <body onload="init()">
 
-<!-- Hier soll der nächste Buchstabe angezeigt werden -->
 
 <div>
     <?php foreach ($this->nextLetter as $letter): ?>
