@@ -6,7 +6,7 @@
 
 
 <h3>Prozentuale richtige Antworten pro Buchstabe:</h3>
-<div style="overflow-x: auto; white-space: nowrap; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+<div>
     <?php foreach ($this->percentageCorrectAnswers as $letter => $percentage): ?>
         <?php
         // Interpolieren der Farbe basierend auf dem Prozentsatz
