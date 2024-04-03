@@ -1,21 +1,43 @@
 @echo off
-set /p wsl=Ist WSL2 installiert? (j/n): 
-set wsl=%wsl:~0,1%
-set wsl=%wsl:lcase%
+echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo +++++++++ Welcome to the LautlosLernen installation script ++++++++++
+echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+echo.
+echo.
 
-if "%wsl%"=="j" (
-    docker-compose up
-) else (
-    set /p install=WSL2 ist nicht installiert. Möchtest du es installieren? (j/n): 
-    set install=%install:~0,1%
-    set install=%install:lcase%
-    if "%install%"=="j" (
-        wsl --install
-        echo.
-        echo Docker wird aufgesetzt.
-        docker-compose up
-    ) else (
-        echo Abbruch.
-        exit
-    )
+:check_wsl2
+ver > nul
+if %ERRORLEVEL% NEQ 0 (
+    echo WSL 2 requires Windows 10 version 1903 or higher.
+    echo Please make sure you have the required Windows version installed.
+    goto :end
 )
+
+wsl --list > nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo WSL 2 is not installed.
+    echo Please install WSL 2 and then rerun this script.
+    goto :end
+)
+
+echo WSL 2 is installed.
+echo.
+
+:input
+set /p docker_installed="Do you have installed Docker Desktop (y/n)? "
+
+if /i "%docker_installed%"=="n" (
+    echo You need to install Docker Desktop.
+    echo Opening https://www.docker.com/products/docker-desktop/ ...
+    start "" "https://www.docker.com/products/docker-desktop/"
+    goto :end
+) else if /i "%docker_installed%"=="y" (
+    echo Perfect. The Docker will be set up now.
+    docker-compose up
+    goto :end
+) else (
+    echo Input not valid, please enter 'y' for yes or 'n' for no.
+    goto :input
+)
+
+:end

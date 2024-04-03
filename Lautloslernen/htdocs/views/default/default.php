@@ -4,14 +4,22 @@
     <p>
         Du willst wissen, wer wir sind und was wir machen? Dann schau doch mal hier nach:
         <nav>
-            <ul>
-                <li><a href="#warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</a></li>
-                <li><a href="#unsere-vision">Unsere Vision</a></li>
-                <li><a href="#unsere-technologie">Unsere Technologie</a></li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Inhaltsverzeichnis</th>
+                </tr>
+                <tr>
+                    <td><a href="#warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#unsere-vision">Unsere Vision</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#unsere-technologie">Unsere Technologie</a></td>
+                </tr>
+            </table>
         </nav>
     </p>
-    
     <h2 id="warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</h2>
     <p>
         Du hast jemanden kennengelernt mit dem Du nicht kommunizieren kannst wie gewohnt?
@@ -39,5 +47,4 @@
         Auf unserer Webseite bieten wir eine einzigartige Möglichkeit, die Gebärdensprache auf eine interaktive und effektive Weise zu erlernen.
         <br>Dank unserer KI-gestützten Plattform kannst Du die Grundlagen und Feinheiten dieser faszinierenden Sprache in Deinem eigenen Tempo und nach Deinen individuellen Bedürfnissen erlernen.
     </p>
-    <iframe width="800" height="450" src="https://www.youtube.com/embed/Cn2Nle9Vca0?si=h7r2leCFcGF3UYRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </main>

@@ -6,7 +6,4 @@ abstract class AbstractRepository {
     public function __construct($database) {
         $this->database = $database;
     }
-
-    
-
 }

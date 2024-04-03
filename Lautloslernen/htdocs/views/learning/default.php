@@ -1,35 +1,31 @@
-<script>
-    function callCheckAnswerAndGetNewLetter() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:8080/controllers/learningController.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    xhr.send("action=callCheckAnswerAndGetNewLetter");
-                }
-            };
-        }
-
-        function callGetLetterToGuess() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:8080/controllers/learningController.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    xhr.send("action=callGetLetterToGuess");
-                }
-            };
-        }
-</script>
-
 <br />
 <br />
-
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 
-<button type="submit" onclick="callCheckAnswerAndGetNewLetter()">Antowort best&auml;igen</button>
-<button type="submit" onclick="callGetLetterToGuess()">Neuer Buchstabe</button>
+<form action="/?a=getNextLetter&c=learning" method="post">
+    <button type="submit">neuer Buchstabe</button>
+</form>
+
+<!-- Hier soll der nächste Buchstabe angezeigt werden -->
+<h3 style="margin-bottom: 10px;">Zeige diesen Buchstabe:</h3>
+<div>
+    <?php foreach ($this->nextLetter as $letter): ?>
+            <?php echo $letter->getLetter(); ?></p>
+        </div>
+    <?php endforeach; ?>
+
+</div>
+
+<form action="/?a=checkAnswer&c=learning" method="post">
+    <fieldset>
+        <!-- Verstecktes Eingabefeld für den Buchstabenwert -->
+        <input type="hidden" name="letterToGuess" value="<?php echo $letter->getLetter(); ?>">
+        <input type="submit" value="Antwort bestätigen"><br><br>
+    </fieldset>
+</form>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>

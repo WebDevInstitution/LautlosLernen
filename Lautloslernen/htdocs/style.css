@@ -10,8 +10,38 @@ body {
   overflow-x: hidden;
 }
 
-.option, details:not(:checked) {
-  background-color: #2E8B57;
+details {
+  list-style: none;
+}
+
+details {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+summary {
+  background-color: #f0f0f0;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+summary:hover {
+  background-color: #e0e0e0;
+}
+
+details p {
+  padding: 15px;
+}
+
+details p {
+  transition: all 0.3s ease;
+}
+
+details:hover p {
+  background-color: #fafafa;
 }
 
 .container, header, main {
@@ -64,6 +94,33 @@ main {
   margin-top: 5px;
   margin-bottom: 8%;
   padding-top: 60px;
+
+  table {
+    border-collapse: collapse;
+    width: 20%;
+    display: inline-block;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    border-radius: 0;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+  
+  table a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  table a:hover {
+    color: #4d73a6;
+  }
 }
 
 aside {
@@ -84,7 +141,6 @@ footer {
   position: fixed; 
   bottom: 0; 
 }
-
 
 .sidenav {
   height: 100%;
@@ -113,32 +169,25 @@ div.dynamic {
   padding: 1rem;
 }
 
-table {
+.letterTable table {
   border-collapse: separate;
   width: 100%;
-  border: 10px solid #8A8A8A; 
+  border: 5px solid #8A8A8A; 
   margin: auto;
-  border-radius: 30px;
   overflow: hidden;
 }
-
-table a:hover {
-  color: #FFD700; 
+.letterTable td {
+  text-align: center;
 }
-
-th {
-  border: 10px solid black;
-  background-color: #989898; 
-  color: white;
-  width: 50%;
+.letterTable .flex-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Versteckt den Output der Wahrscheinlichkeiten auf dem Learning Screen. */
 #label-container div {
   display: none;
 }
-
-
 
 
 /* Stile für Bildschirme mit einer Breite von 600px oder weniger (z.B. Handys) */
