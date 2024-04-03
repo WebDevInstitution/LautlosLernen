@@ -1,4 +1,3 @@
-
 <h2>Login</h2>
 <form method="post" action="/?c=user&a=successfulLogin">
     <label for="email">E-Mail:</label>
