@@ -36,7 +36,6 @@ class UserController extends AbstractController {
             $sql = "INSERT INTO User (UserID, Vorname, Nachname, Passwort, Email, Username)
                     VALUES (NULL, '$vorname', '$nachname', '$hashedPassword', '$email', '$username')";
             $this->database->query($sql);
-
             }
         } else {
             // Falls POST-Daten fehlen, entsprechend handhaben
@@ -51,10 +50,8 @@ class UserController extends AbstractController {
 
     //wenn der Login-Button auf der Anmelde Seite gedrückt wird
     public function successfulloginAction() {
-
         //Wenn Email als auch PW gesetzt sind
         if(isset($_POST['email']) && isset($_POST['passwort'])) {
-
             //UserRepository für die Abfrage öffnen
             $userRepository = new UserRepository($this->database);
             $check = $userRepository->checkPassword($_POST['email'], $_POST['passwort']);
@@ -64,14 +61,18 @@ class UserController extends AbstractController {
                 $_SESSION['isLoggin'] = true;
                 //Speichern der UserID für das Dashbord
                 $_SESSION['UserID'] = $check[0]['UserID'];
+                $this->view->setView("views/default/default.php");
             } else {
                 $_SESSION['isLoggin'] = false;
+                echo '<script>alert("Falsches Passwort oder Email");</script>';
+                $this->view->setView("views/user/login.php");
             } 
         } 
     }
     
     public function logoffAction() {
         $_SESSION['isLoggin'] = false;
+        $this->view->setView("views/default/default.php");
     }
 
 }

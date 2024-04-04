@@ -5,13 +5,26 @@
 
 
 
-<!-- Zeigen Sie die prozentualen richtigen Antworten pro Buchstabe für den aktuellen Benutzer an -->
-<h3 style="margin-bottom: 10px;">Prozentuale richtige Antworten pro Buchstabe:</h3>
-<div style="overflow-x: auto; white-space: nowrap; padding: 10px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+<h3>Prozentuale richtige Antworten pro Buchstabe:</h3>
+<div>
     <?php foreach ($this->percentageCorrectAnswers as $letter => $percentage): ?>
         <?php
-        // Bestimme die Hintergrundfarbe basierend auf dem Prozentsatz
-        $backgroundColor = ($percentage >= 50) ? 'rgba(0, 255, 0, ' . ($percentage / 100) . ')' : 'rgba(255, 0, 0, ' . ($percentage / 100) . ')';
+        // Interpolieren der Farbe basierend auf dem Prozentsatz
+        $hue = ($percentage / 100) * 120; // Farbton von Rot (0) zu Gelb (60) zu Grün (120)
+        $backgroundColor = "hsl($hue, 100%, 50%)"; // Sättigung und Helligkeit bleiben konstant
+        
+        // Wenn der Prozentsatz 0% ist, sollte die Farbe tief rot sein
+        if ($percentage === 0) {
+            $backgroundColor = 'rgba(255, 0, 0, 1)';
+        }
+        // Wenn der Prozentsatz 50% ist, sollte die Farbe Gelb sein
+        else if ($percentage === 50) {
+            $backgroundColor = 'rgba(255, 255, 0, 1)';
+        }
+        // Wenn der Prozentsatz 100% ist, sollte die Farbe grün sein
+        else if ($percentage === 100) {
+            $backgroundColor = 'rgba(0, 255, 0, 1)';
+        }
         ?>
         <div style="display: inline-block; margin-right: 20px; text-align: center; padding: 10px; border-radius: 5px; background-color: <?php echo $backgroundColor; ?>;">
             <p style="margin: 0; font-weight: bold; font-size: 16px;"><?php echo $letter; ?></p>
@@ -19,8 +32,6 @@
         </div>
     <?php endforeach; ?>
 </div>
-
-
 
 <!-- Laden Sie die Chart.js-Bibliothek -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
