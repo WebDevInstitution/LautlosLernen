@@ -22,8 +22,8 @@ class UserController extends AbstractController {
             $userRepository = new UserRepository($this->database);
             $check = $userRepository->userEmailExist($email);
             if ($check == TRUE) {
-                echo "<script>alert('Dieser Email existiert bereits');</script>";
                 $this->view->setview('./views/user/registration.php');
+                echo "<script>alert('Diese Email existiert bereits');</script>";
             }
             
             else{
