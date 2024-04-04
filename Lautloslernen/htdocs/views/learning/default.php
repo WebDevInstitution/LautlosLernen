@@ -2,36 +2,33 @@
 
 
 <div class="lanes" style="--lanes: 4;">
-        <div class="lane todo">
-            <h1>Dein nächster Buchstabe</h1>
+    <div class="lane">
+        <h1>Zeige den Buchstaben</h1>
 
-            <div>
-                <?php foreach ($this->nextLetter as $letter): ?>
-                    <img src="<?php echo $letter->getBuchstabenBild(); ?>" alt="Buchstabe A" width="200">
-                    <?php $_SESSION['lastShownLetter'] = $letter->getLetter();?>
-                <?php endforeach; ?>
-            </div>
-            <br/>
-            <form action="/?a=getNextLetter&c=learning" method="post">
-                <button type="submit" class="button" >neuer Buchstabe</button>
-            </form>
-            <br/>
-
+        <div>
+            <?php foreach ($this->nextLetter as $letter): ?>
+                <img src="<?php echo $letter->getBuchstabenBild(); ?>" alt="Buchstabe A" width="230">
+                <?php $_SESSION['lastShownLetter'] = $letter->getLetter();?>
+            <?php endforeach; ?>
         </div>
-        <div class="lane">
-        <h1>Jetzt bist du dran:</h1>
+        <br/>
+        <form action="/?a=getNextLetter&c=learning" method="post">
+            <button type="submit" class="button" >neuer Buchstabe</button>
+        </form>
+        <br/>
+    </div>
+    <div class="lane">
 
-            <div id="webcam-container"></div>
-            <form id="answer-form" action="/?a=checkAnswer&c=learning" method="post">
+        <div id="webcam-container"></div>
+        <form id="answer-form" action="/?a=checkAnswer&c=learning" method="post">
         <!-- Versteckte Eingabefelder für den höchsten Vorhersagewert und den Buchstaben -->
         <input type="hidden" id="highest-prediction" name="highestPrediction" value="">
         <input type="hidden" id="predicted-letter" name="predictedLetter" value="">
         <input type="hidden" name="letterToGuess" value="<?php echo $letter->getLetter(); ?>">
         <input type="submit" value="Antwort bestätigen" class="button" ><br><br>
         </form>
-
-        </div>
     </div>
+</div>
 
 
 
@@ -52,7 +49,7 @@
             maxPredictions = model.getTotalClasses();
 
             const flip = true;
-            webcam = new tmImage.Webcam(400, 400, flip);
+            webcam = new tmImage.Webcam(350, 350, flip);
             await webcam.setup();
             await webcam.play();
             window.requestAnimationFrame(loop);

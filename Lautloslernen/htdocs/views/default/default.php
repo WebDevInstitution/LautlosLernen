@@ -2,24 +2,24 @@
 <p>Herzlich willkommen auf unserer Website!</p>
 <p>
     Du willst wissen, wer wir sind und was wir machen? Dann schau doch mal hier nach:
-    <nav>
-        <div class="inhaltsTabelle">
-            <table>
-                <tr>
-                    <th>Inhaltsverzeichnis</th>
-                </tr>
-                <tr>
-                    <td><a href="#warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#unsere-vision">Unsere Vision</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#unsere-technologie">Unsere Technologie</a></td>
-                </tr>
-            </table>
-        </div>
-    </nav>
+
+    <div class="inhaltsTabelle">
+        <table>
+            <tr>
+                <th>Inhaltsverzeichnis</th>
+            </tr>
+            <tr>
+                <td><a href="#warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</a></td>
+            </tr>
+            <tr>
+                <td><a href="#unsere-vision">Unsere Vision</a></td>
+            </tr>
+            <tr>
+                <td><a href="#unsere-technologie">Unsere Technologie</a></td>
+            </tr>
+        </table>
+    </div>
+
 </p>
 <h2 id="warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</h2>
 <p>

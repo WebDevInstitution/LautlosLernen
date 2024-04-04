@@ -1,11 +1,11 @@
 <!-- Zeigen Sie die Gesamtantworten für den aktuellen Benutzer an -->
-<h3>Gesamtantworten:</h3>
+<h3>Gesamtantworten</h3>
 <p>Richtige Antworten: <?php echo $this->totalAnswers['total_correct_answers']; ?></p>
 <p>Falsche Antworten: <?php echo $this->totalAnswers['total_wrong_answers']; ?></p>
 
 
 
-<h3>Prozentuale richtige Antworten pro Buchstabe:</h3>
+<h3>Korrekte Antwortquote pro Buchstabe</h3>
 <div>
     <?php foreach ($this->percentageCorrectAnswers as $letter => $percentage): ?>
         <?php
