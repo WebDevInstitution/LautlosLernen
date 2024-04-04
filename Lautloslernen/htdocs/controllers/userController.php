@@ -15,11 +15,8 @@ class UserController extends AbstractController {
     //Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
     public function SuccessfulRegistrationAction() {
         // Übernahme der Daten aus dem Formular
-        if(isset($_POST['vorname']) && isset($_POST['nachname']) && isset($_POST['passwort']) && isset($_POST['username']) && isset($_POST['email'])) {
-            $vorname = $_POST['vorname'];
-            $nachname = $_POST['nachname'];
+        if( isset($_POST['passwort']) && isset($_POST['email'])) {
             $passwort = $_POST['passwort'];
-            $username = $_POST['username'];
             $email = $_POST['email'];
             
             $userRepository = new UserRepository($this->database);
@@ -33,9 +30,11 @@ class UserController extends AbstractController {
             // Hashen des Passworts
             $hashedPassword = hash('sha256', $passwort);
             // Daten in die Datenbank schreiben
-            $sql = "INSERT INTO User (UserID, Vorname, Nachname, Passwort, Email, Username)
-                    VALUES (NULL, '$vorname', '$nachname', '$hashedPassword', '$email', '$username')";
+            $sql = "INSERT INTO User (UserID, Passwort, Email)
+                    VALUES (NULL, '$hashedPassword', '$email')";
             $this->database->query($sql);
+            $this->view->setView("views/user/login.php");
+            echo "<script>alert('Registrierung war erfolgreich!');</script>";
             }
         } else {
             // Falls POST-Daten fehlen, entsprechend handhaben
