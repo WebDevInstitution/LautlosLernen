@@ -1,9 +1,6 @@
-<!-- Zeigen Sie die Gesamtantworten für den aktuellen Benutzer an -->
 <h3>Gesamtantworten</h3>
 <p>Richtige Antworten: <?php echo $this->totalAnswers['total_correct_answers']; ?></p>
 <p>Falsche Antworten: <?php echo $this->totalAnswers['total_wrong_answers']; ?></p>
-
-
 
 <h3>Korrekte Antwortquote pro Buchstabe</h3>
 <div>
@@ -11,19 +8,29 @@
         <?php
         // Interpolieren der Farbe basierend auf dem Prozentsatz
         $hue = ($percentage / 100) * 120; // Farbton von Rot (0) zu Gelb (60) zu Grün (120)
-        $backgroundColor = "hsl($hue, 100%, 50%)"; // Sättigung und Helligkeit bleiben konstant
-        
         // Wenn der Prozentsatz 0% ist, sollte die Farbe tief rot sein
         if ($percentage === 0) {
-            $backgroundColor = 'rgba(255, 0, 0, 1)';
+            $backgroundColor = 'rgba(255, 0, 0, 0.2)';
         }
         // Wenn der Prozentsatz 50% ist, sollte die Farbe Gelb sein
         else if ($percentage === 50) {
-            $backgroundColor = 'rgba(255, 255, 0, 1)';
+            $backgroundColor = 'rgba(255, 255, 0, 0.2)';
         }
         // Wenn der Prozentsatz 100% ist, sollte die Farbe grün sein
         else if ($percentage === 100) {
-            $backgroundColor = 'rgba(0, 255, 0, 1)';
+            $backgroundColor = 'rgba(0, 255, 0, 0.2)';
+        }
+        // Für Werte zwischen 0% und 50%, eine Abstufung von Rot zu Gelb
+        else if ($percentage < 50) {
+            $red = 255; // Maximale rote Intensität
+            $green = round(255 * ($percentage / 50)); // Grün von 0 bis 255 erhöhen
+            $backgroundColor = "rgba($red, $green, 0, 0.2)";
+        }
+        // Für Werte zwischen 50% und 100%, eine Abstufung von Gelb zu Grün
+        else {
+            $red = round(255 * ((100 - $percentage) / 50)); // Rot von 255 bis 0 verringern
+            $green = 255; // Maximale grüne Intensität
+            $backgroundColor = "rgba($red, $green, 0, 0.2)";
         }
         ?>
         <div style="display: inline-block; margin-right: 20px; text-align: center; padding: 10px; border-radius: 5px; background-color: <?php echo $backgroundColor; ?>;">
@@ -33,11 +40,11 @@
     <?php endforeach; ?>
 </div>
 
-<!-- Laden Sie die Chart.js-Bibliothek -->
+<!-- Laden die Chart.js-Bibliothek -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Erstellen Sie ein Canvas-Element für das Balkendiagramm -->
-<canvas id="dashboardChart"></canvas>
+<!-- Erstelle ein Canvas-Element für das Balkendiagramm -->
+<canvas id="dashboardChart" height="90%"></canvas>
 
 <script>
 // Daten für das Balkendiagramm vorbereiten
@@ -79,7 +86,11 @@ var chart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    stepSize: 1,
+                    callback: function(value) {
+                        return value;
+                    }
                 }
             }]
         }
