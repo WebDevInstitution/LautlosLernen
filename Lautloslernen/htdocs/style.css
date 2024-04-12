@@ -144,6 +144,7 @@ main {
     justify-items: center;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .lane {
@@ -153,6 +154,9 @@ main {
     gap: 1rem;
     border-radius: 0.5rem;
     border: 1px solid #999;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
   }
 
   .lane h1 {
