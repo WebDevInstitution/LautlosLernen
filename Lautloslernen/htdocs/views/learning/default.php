@@ -1,9 +1,9 @@
 <body onload="init()">
-
-
+<br>
+<br>
 <div class="lanes" style="--lanes: 4;">
     <div class="lane">
-        <h1>Zeige den Buchstaben</h1>
+        <h1>Zeige den Buchstaben:</h1>
 
         <div>
             <?php foreach ($this->nextLetter as $letter): ?>
@@ -11,21 +11,22 @@
                 <?php $_SESSION['lastShownLetter'] = $letter->getLetter();?>
             <?php endforeach; ?>
         </div>
-        <br/>
+        <br>
         <form action="/?a=getNextLetter&c=learning" method="post">
             <button type="submit" class="button" >neuer Buchstabe</button>
         </form>
         <br/>
     </div>
     <div class="lane">
-
         <div id="webcam-container"></div>
         <form id="answer-form" action="/?a=checkAnswer&c=learning" method="post">
-        <!-- Versteckte Eingabefelder für den höchsten Vorhersagewert und den Buchstaben -->
-        <input type="hidden" id="highest-prediction" name="highestPrediction" value="">
-        <input type="hidden" id="predicted-letter" name="predictedLetter" value="">
-        <input type="hidden" name="letterToGuess" value="<?php echo $letter->getLetter(); ?>">
-        <input type="submit" value="Antwort bestätigen" class="button" ><br><br>
+            <!-- Versteckt Eingabefelder für den höchsten Vorhersagewert und den Buchstaben -->
+            <input type="hidden" id="highest-prediction" name="highestPrediction" value="">
+            <input type="hidden" id="predicted-letter" name="predictedLetter" value="">
+            <input type="hidden" name="letterToGuess" value="<?php echo $letter->getLetter(); ?>">
+            <input type="submit" value="Antwort bestätigen" class="button" >
+            <br>
+            <br>
         </form>
     </div>
 </div>
