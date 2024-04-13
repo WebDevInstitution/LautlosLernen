@@ -6,7 +6,7 @@ class FaqController extends AbstractController {
     }
 
     public function defaultAction(){
-        //Keine Aktionen
+        // Keine Aktionen
     }
 
 }

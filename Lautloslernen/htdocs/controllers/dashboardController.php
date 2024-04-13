@@ -28,6 +28,4 @@ class dashboardController extends AbstractController {
         $dashboardRepository->incrementCorrectAnswer(1, 'C','2024-03-21' );
         $this->view->setView("views/default/default.php");
     }
-
-    
 }

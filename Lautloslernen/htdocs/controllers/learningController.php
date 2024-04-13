@@ -43,6 +43,5 @@ class learningController extends AbstractController {
             $this->view->Letter = $Letter;
             $this->view->setView("views/learning/wrongAnswer.php");
         }
-        
     } 
 }

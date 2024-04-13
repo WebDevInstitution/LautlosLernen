@@ -1,4 +1,5 @@
 <?php
+
 class LetterModel {
     private $letter_id;
     private $letter;
@@ -46,4 +47,3 @@ class LetterModel {
         $this->Teachable = $Teachable;
     }
 }
-

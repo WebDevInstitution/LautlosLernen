@@ -10,7 +10,7 @@
                 <img src="<?php echo $letters->getGebärdenBild(); ?>" alt="Zeichen A" width="200" height="200">
             </td>
         </tr>
-    </table><br>
+    </table>
+    <br>
     <?php endforeach; ?>
 </div>
-

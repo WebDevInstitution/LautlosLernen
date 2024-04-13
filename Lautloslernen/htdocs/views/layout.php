@@ -18,6 +18,6 @@
         <nav id="main"><?php $this->renderView(); ?></nav>
     </main>
 </br>
-        <?php include './src/footer.php'; ?>
+    <?php include './src/footer.php'; ?>
 </body>
 </html>

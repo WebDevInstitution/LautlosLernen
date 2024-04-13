@@ -5,14 +5,14 @@ class UserController extends AbstractController {
     }
 
     public function defaultAction() {
-        //keine Aktionen
+        // keine Aktionen
     }
 
     public function registrationAction() {
-        //keine Aktionen
+        // keine Aktionen
     }
 
-    //Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
+    // Wird ausgeführt, wenn Registrierungsbutton auf Default gedrückt wird
     public function SuccessfulRegistrationAction() {
         // Übernahme der Daten aus dem Formular
         if( isset($_POST['passwort']) && isset($_POST['email'])) {
@@ -43,19 +43,19 @@ class UserController extends AbstractController {
     }
     
     public function loginAction(){
-        //keine Aktionen
+        // keine Aktionen
     }
         
 
-    //wenn der Login-Button auf der Anmelde Seite gedrückt wird
+    // Wenn der Login-Button auf der Anmelde Seite gedrückt wird
     public function successfulloginAction() {
-        //Wenn Email als auch PW gesetzt sind
+        // Wenn Email als auch PW gesetzt sind
         if(isset($_POST['email']) && isset($_POST['passwort'])) {
-            //UserRepository für die Abfrage öffnen
+            // UserRepository für die Abfrage öffnen
             $userRepository = new UserRepository($this->database);
             $check = $userRepository->checkPassword($_POST['email'], $_POST['passwort']);
             $hashedPassword = hash('sha256', $_POST['passwort']);
-            //Wenn Passwort und Email übereinstimmen wird die Variable auf true gesetzt
+            // Wenn Passwort und Email übereinstimmen, wird die Variable auf true gesetzt
             if(!empty($check) && $check[0]['Passwort'] == $hashedPassword && $check[0]['Email'] == $_POST['email']) {
                 $_SESSION['isLoggin'] = true;
                 //Speichern der UserID für das Dashbord

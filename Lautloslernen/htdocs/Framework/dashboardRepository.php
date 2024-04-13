@@ -1,4 +1,5 @@
 <?php
+
 include_once __DIR__ ."/../models/dashboardModel.php";
 include_once __DIR__ ."/AbstractRepository.php";
 
@@ -19,8 +20,8 @@ class dashboardRepository extends AbstractRepository {
         return $dashboard;
     }
 
-    //Summiert die Anzahl an Falschen und richtigen Antworten pro Tag und erstellt daraus ein Dashbord
-    //Aus den Daten entsteht das Balkendiagramm
+    // Summiert die Anzahl an Falschen und richtigen Antworten pro Tag und erstellt daraus ein Dashbord
+    // Aus den Daten entsteht das Balkendiagramm
     public function getdashboard($id){
         // Datenbankabfrage anpassen, um die Anzahl der richtigen und falschen Antworten pro Datum zu erhalten
         $sql = 'SELECT 
@@ -44,7 +45,7 @@ class dashboardRepository extends AbstractRepository {
         return $result;
     }   
 
-    //für die Gesamtantworten
+    // Für die Gesamtantworten
     public function getTotalAnswersByUser($userId) {
         // SQL-Abfrage, um die gesamten richtigen und falschen Antworten für einen bestimmten Benutzer abzurufen
         $sql = "SELECT SUM(richtige_antworten) AS total_correct_answers, SUM(falsche_antworten) AS total_wrong_answers FROM Dashboard WHERE user_id = $userId";
@@ -63,7 +64,7 @@ class dashboardRepository extends AbstractRepository {
         return $result;
     }
 
-    //Für die Übersicht Prozentuale richtige Antworten pro Buchstabe
+    // Für die Übersicht Prozentuale richtige Antworten pro Buchstabe
     public function getPercentageCorrectAnswersByUser($userId) {
         // SQL-Abfrage, um die Anzahl der richtigen und falschen Antworten für jeden Buchstaben des Benutzers abzurufen
         $sql = "SELECT buchstabe, 
@@ -85,18 +86,18 @@ class dashboardRepository extends AbstractRepository {
             $totalWrongAnswers = $row['total_wrong_answers'];
             $totalAnswers = $totalCorrectAnswers + $totalWrongAnswers;
     
-            // Berechnen Sie den prozentualen Anteil der richtigen Antworten
+            // Berechne den prozentualen Anteil der richtigen Antworten
             $percentageCorrectAnswers = ($totalAnswers > 0) ? ($totalCorrectAnswers / $totalAnswers) * 100 : 0;
     
-            // Fügen Sie den prozentualen Anteil der richtigen Antworten pro Buchstabe zum Ergebnis hinzu
+            // Füge den prozentualen Anteil der richtigen Antworten pro Buchstabe zum Ergebnis hinzu
             $result[$buchstabe] = $percentageCorrectAnswers;
         }
     
         return $result;
     }
 
-    //erhöhen der Richtigen Antworten auf der DB für das Dashboard
-    //Diese Methoden werden benötigt, um die Werte zu ändern, wenn der User die richtige oder Falsche Antwort abgegeben hat
+    // Erhöhen der Richtigen Antworten auf der DB für das Dashboard
+    // Diese Methoden werden benötigt, um die Werte zu ändern, wenn der User die richtige oder Falsche Antwort abgegeben hat
     public function incrementCorrectAnswer($userId, $letter, $date){
         // Konvertiere den Buchstaben in Großbuchstaben
         $letter = strtoupper($letter);
@@ -116,8 +117,8 @@ class dashboardRepository extends AbstractRepository {
         $this->database->query($sql);
     }
 
-    //erhöhen der Falschen Antworten auf der DB für das Dashboard
-    //Diese Methoden werden benötigt, um die Werte zu ändern, wenn der User die richtige oder Falsche Antwort abgegeben hat
+    // Erhöhen der Falschen Antworten auf der DB für das Dashboard
+    // Diese Methoden werden benötigt, um die Werte zu ändern, wenn der User die richtige oder Falsche Antwort abgegeben hat
     public function incrementWrongAnswer($userId, $letter, $date){
         // Konvertiere den Buchstaben in Großbuchstaben
         $letter = strtoupper($letter);
@@ -137,7 +138,7 @@ class dashboardRepository extends AbstractRepository {
         $this->database->query($sql);
     }
     
-    //wird für das Hochsetzten der falschen bzw. richtigen Antworten benötig. Mit der Methode kann man herausfinden, ob Einträge vorhanden sind für ein Datum, Buchstabe und User
+    // Wird für das Hochsetzten der falschen bzw. richtigen Antworten benötig. Mit der Methode kann man herausfinden, ob Einträge vorhanden sind für ein Datum, Buchstabe und User
     private function getDashboardEntryByDate($userId, $letter, $date) {
         // SQL-Abfrage, um nach einem Eintrag für den bestimmten Nutzer, Buchstaben und Datum zu suchen
         $sql = "SELECT * FROM Dashboard WHERE user_id = $userId AND buchstabe = '$letter' AND datum = '$date'";
@@ -148,8 +149,4 @@ class dashboardRepository extends AbstractRepository {
         // Rückgabe des gefundenen Eintrags oder NULL, wenn kein Eintrag vorhanden ist
         return $data ? $data[0] : null;
     }
-    
-    
-    
-    
 }
