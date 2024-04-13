@@ -1,4 +1,5 @@
 <?php
+
 include_once __DIR__ ."/../models/letterModel.php";
 
 class letterRepository extends AbstractRepository {
@@ -17,11 +18,11 @@ class letterRepository extends AbstractRepository {
     }
     
     public function getALL(){
-        //aus DB abrufen
+        // aus DB abrufen
         $sql = 'select * from letters';
         $data = $this->database->query($sql);
         $result = [];
-        //ins Model übertragen
+        // ins Model übertragen
         foreach($data as $row) {
             $result[] = $this->createLetterFromData($row);
         }
@@ -38,11 +39,10 @@ class letterRepository extends AbstractRepository {
         }
         return $result;
     }
-    
 
     public function getnextLetter(){
         $lastLetter = $_SESSION['lastShownLetter'];
-        //aus DB abrufen
+        // aus DB abrufen
         $sql = "
         SELECT *
         FROM letters
@@ -52,7 +52,7 @@ class letterRepository extends AbstractRepository {
         ";
         $data = $this->database->query($sql);
         $result = [];
-        //ins Model übertragen
+        // ins Model übertragen
         foreach($data as $row) {
             $result[] = $this->createLetterFromData($row);
         }

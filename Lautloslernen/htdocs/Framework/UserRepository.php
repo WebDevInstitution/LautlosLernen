@@ -5,8 +5,8 @@ class UserRepository extends AbstractRepository {
         parent::__construct($database);
     }
  
-    //In der Anmeldung genutzte Daten werden hier von der DB abgefragt
-    //SELECT Abfrage guckt nicht nach Groß- Kleinschreibung deswegen spätere erneute überprüfung durch if
+    // In der Anmeldung genutzte Daten werden hier von der DB abgefragt
+    // SELECT Abfrage schaut nicht nach Groß- Kleinschreibung deswegen spätere erneute überprüfung durch if
     public function checkPassword($email, $password) {
         // Hashwert des eingegebenen Passworts erstellen
         $hashedPassword = hash('sha256', $password);
@@ -24,5 +24,4 @@ class UserRepository extends AbstractRepository {
         }
         return true;
     }
-    
 }

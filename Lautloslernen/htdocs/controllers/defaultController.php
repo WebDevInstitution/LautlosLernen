@@ -6,15 +6,15 @@ class DefaultController extends AbstractController {
     }
 
     public function defaultAction() {
-        //leer da keine Aktion       
+        // leer, da keine Aktion       
     }
     public function impressumAction() {
-        //leer da keine Aktion
+        // leer, da keine Aktion
     }
 
-    //Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
+    // Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
     public function registrierenAction() {
-        //Übernahme der Daten aus der Default View
+        // Übernahme der Daten aus der Default View
         $vorname = $_POST['vorname'];
         $nachname = $_POST['nachname'];
         $passwort = $_POST['passwort'];
@@ -24,7 +24,7 @@ class DefaultController extends AbstractController {
         // Hashen des Passworts
         $hashedPassword = hash('sha256', $passwort);
     
-        //daten werden in die DB geschrieben
+        // Daten werden in die DB geschrieben
         $sql = "INSERT INTO User (UserID, Vorname, Nachname, Passwort, Email, Username)
                 VALUES (NULL, '$vorname', '$nachname', '$hashedPassword', '$email', '$username')";
         $this->database->query($sql);

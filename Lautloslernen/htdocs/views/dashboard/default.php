@@ -58,8 +58,6 @@ var wrongAnswers = [];
    wrongAnswers.push(<?php echo $dashboard->getFalsche_antworten(); ?>);
 <?php endforeach; ?> 
 
-
-
 // Kontext des Canvas-Elements erhalten
 var ctx = document.getElementById('dashboardChart').getContext('2d');
 
@@ -97,5 +95,3 @@ var chart = new Chart(ctx, {
     }
 });
 </script>
-
-

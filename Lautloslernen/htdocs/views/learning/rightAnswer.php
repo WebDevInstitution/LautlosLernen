@@ -17,6 +17,7 @@
 </div>
 
 <br/>
+
 <form action="/?a=getNextLetter&c=learning" method="post" class="Button">
     <button type="submit" class="button" >weiter lernen</button>
 </form>

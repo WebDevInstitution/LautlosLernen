@@ -1,25 +1,25 @@
 <?php
-//erstellt ein Suchmuster für den spl-Autoloader
+
 function autoloader($className) {
-    //Einzubindende Ordner
+    // Einzubindende Ordner
     $frameworkPath = './framework/';
     $controllerPath = './controllers/';
-    //Klassen Pfad erstellen, \\ wird zu / geändert damit der Pfad auf allen Betriebssystemen läuft
+    // Klassenpfad erstellen, '\\' wird zu '/' geändert, damit der Pfad auf allen Betriebssystemen läuft
     $classPath = $frameworkPath . str_replace('\\', '/', $className) . '.php';
    
-    //wenn diese Klasse Existiert soll sie included werden
+    // Wenn diese Klasse Existiert soll sie included werden
     if (file_exists($classPath)) {
         include $classPath;
-    } else {//Wenn die Klasse nicht im Framework Ordner zufinden ist wird sie im Controller Ordner gesucht und included
+    } else { // Wenn die Klasse nicht im Framework Ordner zufinden ist wird sie im Controller Ordner gesucht und included
         $classPath = $controllerPath . $className . '.php';
         if (file_exists($classPath)) {
             include $classPath;
         }
     }
 }
-//ausführen des autoloders, wenn jetzt eine Klasse benötigt wird ist ein include nicht mehr von nöten
+// Ausführen des autoloders, wenn jetzt eine Klasse benötigt wird ist ein include nicht mehr von nöten
 spl_autoload_register('autoloader');
-//Session für globale variablen wird geöffnet
+// Session für globale variablen wird geöffnet
 session_start();
 
 // Setze die Logon-Variable zu Beginn auf false, wenn sie noch nicht gesetzt ist
@@ -38,12 +38,12 @@ const DEFAULT_ACTION = 'default';
 
 // get user input
 if(isset($_GET['c'])) {
-    $controllerInput = $_GET['c'];     //z.B.car
+    $controllerInput = $_GET['c'];
 } else {
     $controllerInput = DEFAULT_CONTROLLER;
 }
 if(isset($_GET['a'])) {
-    $actionInput = $_GET['a'];      //z.B.detaill
+    $actionInput = $_GET['a'];
 } else {
     $actionInput = DEFAULT_ACTION;
 }
@@ -51,18 +51,16 @@ if(isset($_GET['a'])) {
 // create proper names
 $controllerFileName = './controllers/'
     . strtolower($controllerInput)
-    . 'Controller.php';         //z.B. ./controllers/carController.php
-$controllerName = ucfirst(strtolower($controllerInput)) . 'Controller';   //z.B:CarController
+    . 'Controller.php';
+$controllerName = ucfirst(strtolower($controllerInput)) . 'Controller';
 
 $actionFileName = './views/'
     . strtolower($controllerInput)
     . '/'
     . strtolower($actionInput)
-    . '.php';       //z.B.  ./views/car/detaill.php
-$actionName = strtolower($actionInput) . 'Action';      //z.B. detaillAction
+    . '.php';
+$actionName = strtolower($actionInput) . 'Action';
 
-
-// load controller file z.B.  ./controllers/carController.php
 try {
 
 
@@ -70,34 +68,34 @@ try {
         // include der DB config
         include 'config.php'; 
 
-        //Verbindung zur DB herstellen
+        // Verbindung zur DB herstellen
         $database = new Database($config);
         $database->connect();
 
-        //erstellen von der import Klase
-        //pruefe_tabelle_in_db() prüft ob DB bereits existiert wenn keine Tabellen erstellt, sost werden sie hier erstellt
+        // Erstellen von der import Klase
+        // pruefe_tabelle_in_db() prüft ob DB bereits existiert wenn keine Tabellen erstellt, sost werden sie hier erstellt
         $import = new Import($database);
         $import->pruefe_tabelle_in_db();
 
-        //View initialisieren
+        // View initialisieren
         $view = new View();
-        $controller = new $controllerName($view, $database);  //z.B:CarController
+        $controller = new $controllerName($view, $database);
 
-        //Action prüfen und durchführen
+        // Action prüfen und durchführen
         if (method_exists($controller, $actionName)) {   
-            $controller->$actionName();         //ausführen der Action z.B. detaillAction
+            $controller->$actionName();
 
-            //render setzt das viewfileName in der View
-            //das Layout wird eingefügt  -> Im Layout wird renderView() aufgerufen -> include des viewFileName
+            // render setzt das viewfileName in der View
+            // das Layout wird eingefügt  -> Im Layout wird renderView() aufgerufen -> include des viewFileName
 
-            $view->render($actionFileName);     //z.B.  ./views/car/detaill.php
+            $view->render($actionFileName); 
             
         } else {
             throw new Exception("Action $actionName not found");
         }
     } 
 
-    //Falls kein Controller gefunden wird
+    // Falls kein Controller gefunden wird
     else {
         throw new Exception("Controller file $controllerFileName not found");
     }
