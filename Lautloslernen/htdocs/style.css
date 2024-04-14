@@ -15,7 +15,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 5 var(--header-spacing);
-  background-color: #1E3A5F;
+  background-color: #4d73a6;
   color: white;
   position: fixed;
   z-index: 1000;
