@@ -9,7 +9,6 @@ class View {
     private $viewFileName;
 
     // force files
-    // Für die Setting View, damit keine addcar, loescheAutoMitIDAction, dbreset
     private $force;
     private $forceview;
 
@@ -37,11 +36,9 @@ class View {
     }
 
     // Wird aufgerufen unter index, um die aktuelle Seite anzuzeigen
-    // z.B.  ./views/car/detaill.php
     public function render($viewFileName) {
         $layoutFileName = './views/layout.php';
 
-        // Wenn canRender false ist return
         if($this->canRender == false) {
             return;
         }
@@ -57,7 +54,6 @@ class View {
         }
 
         // Im Standart Fall wird viewFileName auf die Seite gesetzt, die im Parameter angezeigt wird
-        // z.B. ./views/car/detaill.php
         else{
             if(file_exists($layoutFileName)) {
                 // Setzt das viewFileName in der Klasse auf den Parameter
