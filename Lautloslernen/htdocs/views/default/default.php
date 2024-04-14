@@ -55,6 +55,6 @@
 <h2 id="finanzierung">Unsere Finanzierung & Zugehörigkeit</h2>
 <p>
     LautlosLernen finanziert sich in erster Linie über den Landesverband der Gehörlosen Baden-Württemberg, dem wir angehörig sind.
-    <br>Wenn Du uns trotzdem unterstützen willst, kannst du uns gerne <a href="https://secure.spendenbank.de/form/3084">hier</a> unterstützen.
+    <br>Wenn Du uns trotzdem unterstützen willst, kannst du uns gerne <a href="https://secure.spendenbank.de/form/3084" target="_blank">hier</a> unterstützen.
     <br>Um sicherzustellen, dass die Spende auch bei uns ankommt, kannst Du unter dem Reiter "Ich spende für" die Option "Eigener Verwendungszweck" auswählen und im dann erscheindenen Textfeld für den Verwendungszweck "LautlosLernen" eingeben.
 </p>
