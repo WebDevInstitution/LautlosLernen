@@ -57,7 +57,7 @@ class View {
         }
 
         // Im Standart Fall wird viewFileName auf die Seite gesetzt, die im Parameter angezeigt wird
-        // z.B.  ./views/car/detaill.php
+        // z.B. ./views/car/detaill.php
         else{
             if(file_exists($layoutFileName)) {
                 // Setzt das viewFileName in der Klasse auf den Parameter
@@ -69,7 +69,7 @@ class View {
         }
     }
 
-    private function renderView() { // @Timbuc123 brauchen wir das noch?
+    private function renderView() {
         include $this->viewFileName;
     }
 }
