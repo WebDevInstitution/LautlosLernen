@@ -4,7 +4,7 @@
 <p>LautlosLernen<br>
 Musterstraße 1a<br>
 Stuttgart 70174<br>
-kontakt@lautoslernen.com<br></p>
+kontakt@lautoslernen.de<br></p>
 
 <h2>Haftungsausschluss:</h2>
 <p>Die Informationen auf dieser Website wurden sorgfältig recherchiert und zusammengestellt. Dennoch kann keine Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der bereitgestellten Inhalte übernommen werden. Jegliche Haftung für Schäden, die direkt oder indirekt aus der Nutzung dieser Website entstehen, wird ausgeschlossen.</p>

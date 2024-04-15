@@ -33,7 +33,7 @@
     Als Erfinder:innen, Gründer:innen und Entwickler:innen der Lernplattform LautlosLernen ist es uns ein Anliegen jegliche Art von Inklusion und Barrierefreiheit zu fördern und Diskriminierung sowie Exklusion zu vermindern bzw. vollständig zu vermeiden.  
     <br>Es gibt verschiedene Meinungen über die Bezeichnung von Personen mit einer Hörbeeinträchtigung. Im Folgenden werden nach bestem Wissen und Gewissen die Begriffe „hörbeeinträchtigt“, „gehörlos“ und „schwerhörig“ verwendet. Wir sehen von der Verwendung von Bezeichnungen wie „taub“ oder „taubstumm“ ab.
     <br>Sollten Sie sich als Nutzer:in dieser Webite von den verwendeten Bezeichnungen diskriminiert fühlen oder anderweitige Fragen haben, treten Sie gerne persönlich mit unserem Team in Kommunikation.
-    <br>Kontakt: kontakt@lautloslernen.de
+    <br>Kontakt: <a href="mailto:kontakt@lautloslernen.de">kontakt@lautloslernen.de</a> 
 </p>
 
 <h2 id="warum-gebaerdensprache-lernen">Warum solltest du Gebärdensprache lernen?</h2>

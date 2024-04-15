@@ -12,7 +12,6 @@
 <details>
   <summary>Ist Gebärdensprache universell?</summary>
   <p>Nein, Gebärdensprache ist nicht universell. Wie gesprochene Sprachen unterscheidet sie sich je nach Region und Kultur. Jede Gebärdensprache hat ihre eigenen Grammatikregeln, Vokabular und Ausdrucksformen.</p>
-
 </details>
 
 <details>
