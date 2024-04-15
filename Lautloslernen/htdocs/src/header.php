@@ -9,11 +9,11 @@
     <!-- Navigationsleiste -->
     <div class="nav" style="display: flex; align-items: center;">
         <a href="/" class="nav-link">Home</a>
+        <a href="https://secure.spendenbank.de/form/3084" target="_blank" class="nav-link">Spenden</a>
        <?php if(isset($_SESSION['isLoggin']) && $_SESSION['isLoggin'] == true): ?>
             <a href="/?c=learning" class="nav-link">Lernen</a>
             <a href="/?c=dashboard" class="nav-link">Dashboard</a>
             <a href="/?c=letter" class="nav-link">Buchstaben</a>
-            <a href="https://secure.spendenbank.de/form/3084" target="_blank" class="nav-link">Spenden</a>
             <a href="/?a=logoff&c=user" class="nav-link">Abmelden</a>
 
        <?php else: ?>
