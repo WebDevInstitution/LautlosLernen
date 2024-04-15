@@ -6,7 +6,7 @@
 
 <details>
   <summary>Wie viele verschiedene Gebärdensprachen gibt es?</summary>
-  <p> Es gibt Hunderte von Gebärdensprachen auf der ganzen Welt, wobei jede Region oder jedes Land ihre eigene Gebärdensprache hat. Beispiele sind American Sign Language (ASL) in den USA, British Sign Language (BSL) im Vereinigten Königreich und Deutsche Gebärdensprache (DGS) in der DACH Region.</p>
+  <p> Es gibt rund 200 Gebärdensprachen auf der ganzen Welt, wobei jede Region oder jedes Land ihre eigene Gebärdensprache hat. Wie bei verbaler Sprache gibt es auch in der Gebärdensprache Dialekte. Beispiele sind American Sign Language (ASL) in den USA, British Sign Language (BSL) im Vereinigten Königreich und Deutsche Gebärdensprache (DGS) in der deutschsprachigen Region.</p>
 </details>
 
 <details>
@@ -17,7 +17,7 @@
 
 <details>
   <summary>Welche Rolle spielt Gebärdensprache in der Gesellschaft?</summary>
-  <p>Gebärdensprache spielt eine wichtige Rolle in der Förderung der Inklusion und der Kommunikation für taube und hörbehinderte Menschen. Sie ermöglicht diesen Menschen den Zugang zu Informationen, Bildung und sozialen Interaktionen und trägt dazu bei, die Vielfalt der menschlichen Kommunikation zu würdigen und zu feiern.</p>
+  <p>Gebärdensprache spielt eine wichtige Rolle in der Förderung der Inklusion und der Kommunikation für gehörlose und schwerhörige Menschen. Sie ermöglicht diesen Menschen den Zugang zu Informationen, Bildung und sozialen Interaktionen und trägt dazu bei, die Vielfalt der menschlichen Kommunikation zu würdigen und zu feiern.</p>
 </details>
 
 <details>
@@ -32,7 +32,7 @@
 
 <details>
   <summary>Gibt es spezielle Berufe, die Gebärdensprache erfordern?</summary>
-  <p>Ja, es gibt viele Berufe, in denen die Kenntnis von Gebärdensprache erforderlich oder äußerst nützlich ist. Dazu gehören Gebärdensprachdolmetscher, Lehrer für Gehörlosenschulen, Sozialarbeiter, Therapeuten und viele mehr.</p>
+  <p>Ja, es gibt viele Berufe, in denen die Kenntnis von Gebärdensprache erforderlich oder äußerst nützlich ist. Dazu gehören Gebärdensprachdolmetscher:innen, Lehrende für Gehörlosenschulen, Sozialarbeiter:innen, Therapeut:innen, Ärzt:innen und viele mehr.</p>
 </details>
 
 <details>
