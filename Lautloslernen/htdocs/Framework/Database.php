@@ -35,7 +35,6 @@ class Database {
 
         else {
             // Für erfolgreich ausgeführte Abfragen, die kein SELECT sind
-            // Also keinen Rückgabewert haben. Z.B. DBreset
             return true; 
         }
     }

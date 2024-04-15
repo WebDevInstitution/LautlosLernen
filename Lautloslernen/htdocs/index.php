@@ -35,7 +35,6 @@ if (!isset($_SESSION['lastShownLetter'])) {
 const DEFAULT_CONTROLLER = 'default';
 const DEFAULT_ACTION = 'default';
 
-
 // get user input
 if(isset($_GET['c'])) {
     $controllerInput = $_GET['c'];
@@ -62,7 +61,6 @@ $actionFileName = './views/'
 $actionName = strtolower($actionInput) . 'Action';
 
 try {
-
 
     if (file_exists($controllerFileName)) {
         // include der DB config

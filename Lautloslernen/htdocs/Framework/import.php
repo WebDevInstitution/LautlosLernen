@@ -6,7 +6,6 @@ class Import{
     public function __construct($database) {
         $this->database = $database;
     }
-
     
     // Wird in pruefe_tabelle_in_db() aufgerufen
     public function createTableUser(){
@@ -39,6 +38,7 @@ class Import{
         $this->database->query($sql);
     }
 
+    // Erstelle die Tabelle Letters
     public function createTableAlphabet(){
         $sql="
         CREATE TABLE Letters (
@@ -53,6 +53,7 @@ class Import{
         $this->database->query($sql);
     }
 
+    // Befülle die Tabelle Letters
     public function insertIntoLetters(){
         $sql = "
         INSERT INTO Letters (letter, GebärdenBild, BuchstabenBild, Teachable) VALUES
@@ -86,6 +87,7 @@ class Import{
         $this->database->query($sql);
     }
 
+    // Lösche alle Tabellen
     public function dropTables(){
         $sqlDropUser = "DROP TABLE IF EXISTS User;";
         $sqlDropDashbord =  "DROP TABLE IF EXISTS Dashboard;";
