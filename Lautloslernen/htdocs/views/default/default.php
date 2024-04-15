@@ -40,6 +40,11 @@
 <p>
     Das Erlernen von Gebärdensprache bietet zahlreiche Vorteile. Zum einen ermöglicht es eine barrierefreie Kommunikation mit hörbeeinträchtigten Personen, was zu einer inklusiveren Gesellschaft beiträgt und Barrieren abbaut. Darüber hinaus eröffnet es berufliche Möglichkeiten in Bereichen wie Bildung, Sozialarbeit und medizinische Versorgung. Doch Gebärdensprache ist nicht nur ein Kommunikationsmittel, sondern auch Teil einer eigenen Kultur und Tradition. Durch das Erlernen von DGS erhält man ein besseres Verständnis für die Gebärdensprachgemeinschaft und ihre Lebensweise.
     <br>Letztendlich trägt das Erlernen von Gebärdensprache nicht nur zur persönlichen Bereicherung bei, sondern auch dazu, eine Welt zu schaffen, die für alle zugänglicher und inklusiver ist.
+    <br>Die Wahrscheinlichkeit, einem Menschen zu begegnen, der zumindest teilweise auf die Nutzung von Gebärdensprache angewiesen ist, ist nämlich gar nicht so gering:
+    <details>
+        <summary>Statistik zur Anzahl der Schwerhörigen und Menschen mit Sprach- oder Sprechstörungen in Deutschland nach Art der Behinderung in den Jahren 2017 bis 2021</summary>
+        <p><img src="../../img/statistik.png" alt="Statistik zur Anzahl der Schwerhörigen und Menschen mit Sprach- oder Sprechstörungen in Deutschland nach Art der Behinderung in den Jahren 2017 bis 2021" width=60% height=40%></p>
+    </details>
 </p>
 
 <h2 id="unsere-vision">Unsere Vision</h2>
