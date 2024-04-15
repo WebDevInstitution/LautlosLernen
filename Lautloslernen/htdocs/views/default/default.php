@@ -9,6 +9,9 @@
                 <th>Inhaltsverzeichnis</th>
             </tr>
             <tr>
+                <td><a href="#wording">Wording gegen Diskriminierung</a></td>
+            </tr>
+            <tr>
                 <td><a href="#warum-gebaerdensprache-lernen">Warum solltest du Gebärdensprache lernen?</a></td>
             </tr>
             <tr>
@@ -20,13 +23,19 @@
             <tr>
                 <td><a href="#finanzierung">Unsere Finanzierung & Zugehörigkeit</a></td>
             </tr>
-            <tr>
-                <td><a href="#wording">Wording gegen Diskriminierung</a></td>
-            </tr>
         </table>
     </div>
 
 </p>
+
+<h2 id="wording">Wording gegen Diskriminierung</h2>
+<p>
+    Als Erfinder:innen, Gründer:innen und Entwickler:innen der Lernplattform LautlosLernen ist es uns ein Anliegen jegliche Art von Inklusion und Barrierefreiheit zu fördern und Diskriminierung sowie Exklusion zu vermindern bzw. vollständig zu vermeiden.  
+    <br>Es gibt verschiedene Meinungen über die Bezeichnung von Personen mit einer Hörbeeinträchtigung. Im Folgenden werden nach bestem Wissen und Gewissen die Begriffe „hörbeeinträchtigt“, „gehörlos“ und „schwerhörig“ verwendet. Wir sehen von der Verwendung von Bezeichnungen wie „taub“ oder „taubstumm“ ab.
+    <br>Sollten Sie sich als Nutzer:in dieser Webite von den verwendeten Bezeichnungen diskriminiert fühlen oder anderweitige Fragen haben, treten Sie gerne persönlich mit unserem Team in Kommunikation.
+    <br>Kontakt: kontakt@lautloslernen.de
+</p>
+
 <h2 id="warum-gebaerdensprache-lernen">Warum solltest du Gebärdensprache lernen?</h2>
 <p>
     Das Erlernen von Gebärdensprache bietet zahlreiche Vorteile. Zum einen ermöglicht es eine barrierefreie Kommunikation mit hörbeeinträchtigten Personen, was zu einer inklusiveren Gesellschaft beiträgt und Barrieren abbaut. Darüber hinaus eröffnet es berufliche Möglichkeiten in Bereichen wie Bildung, Sozialarbeit und medizinische Versorgung. Doch Gebärdensprache ist nicht nur ein Kommunikationsmittel, sondern auch Teil einer eigenen Kultur und Tradition. Durch das Erlernen von DGS erhält man ein besseres Verständnis für die Gebärdensprachgemeinschaft und ihre Lebensweise.
@@ -56,12 +65,4 @@
     LautlosLernen finanziert sich in erster Linie über den Landesverband der Gehörlosen Baden-Württemberg, dem wir angehörig sind.
     <br>Wenn Du uns trotzdem unterstützen willst, kannst du uns gerne <a href="https://secure.spendenbank.de/form/3084" target="_blank">hier</a> unterstützen.
     <br>Um sicherzustellen, dass die Spende auch bei uns ankommt, kannst Du unter dem Reiter "Ich spende für" die Option "Eigener Verwendungszweck" auswählen und im dann erscheindenen Textfeld für den Verwendungszweck "LautlosLernen" eingeben.
-</p>
-
-<h2 id="wording">Wording gegen Diskriminierung</h2>
-<p>
-    Als Erfinder:innen, Gründer:innen und Entwickler:innen der Lernplattform LautlosLernen ist es uns ein Anliegen jegliche Art von Inklusion und Barrierefreiheit zu fördern und Diskriminierung sowie Exklusion zu vermindern bzw. vollständig zu vermeiden.  
-    <br>Es gibt verschiedene Meinungen über die Bezeichnung von Personen mit einer Hörbeeinträchtigung. Im Folgenden werden nach bestem Wissen und Gewissen die Begriffe „hörbeeinträchtigt“, „gehörlos“ und „schwerhörig“ verwendet. Wir sehen von der Verwendung von Bezeichnungen wie „taub“ oder „taubstumm“ ab.
-    <br>Sollten Sie sich als Nutzer:in dieser Webite von den verwendeten Bezeichnungen diskriminiert fühlen oder anderweitige Fragen haben, treten Sie gerne persönlich mit unserem Team in Kommunikation.
-    <br>Kontakt: kontakt@lautloslernen.de
 </p>
