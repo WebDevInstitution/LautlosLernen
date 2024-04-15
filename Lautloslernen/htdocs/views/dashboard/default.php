@@ -80,15 +80,13 @@ var chart = new Chart(ctx, {
             borderWidth: 1
         }]
     },
+    // Achsenoptionen
     options: {
         scales: {
             yAxes: [{
                 ticks: {
                     beginAtZero: true,
-                    stepSize: 1,
-                    callback: function(value) {
-                        return value;
-                    }
+                    stepSize: 1
                 }
             }]
         }

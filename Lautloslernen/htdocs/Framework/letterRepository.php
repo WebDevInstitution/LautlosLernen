@@ -7,6 +7,7 @@ class letterRepository extends AbstractRepository {
         parent::__construct($database);
     }
 
+    // Sammle alle Infos für einen Buchstaben
     private function createLetterFromData($data) {
         $letter = new LetterModel();
         $letter->setLetter_id($data['letter_id']);

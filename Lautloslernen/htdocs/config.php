@@ -1,3 +1,4 @@
+<!-- Datenbank Login Daten -->
 <?php
 $config = [
     'host' => 'mariadb',

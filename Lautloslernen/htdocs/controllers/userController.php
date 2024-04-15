@@ -73,5 +73,4 @@ class UserController extends AbstractController {
         $_SESSION['isLoggin'] = false;
         $this->view->setView("views/default/default.php");
     }
-
 }

@@ -1,10 +1,12 @@
 <div class="header" style="background-color: #4d73a6; color: #FFFFFF; display: flex;">
+    <!-- Logo -->
     <div class="logo" style="border-radius: 10px; margin-right: 5%; margin-left: 10px; margin-top: 10px;">
         <a href="http://localhost:8080" style="text-decoration: none;">
             <img src="/img/LogoLtransparent.png" style="width: 140px; height: 100%;" alt="Lautlos Lernen">
         </a>
     </div>
 
+    <!-- Navigationsleiste -->
     <div class="nav" style="display: flex; align-items: center;">
         <a href="/" class="nav-link">Home</a>
        <?php if(isset($_SESSION['isLoggin']) && $_SESSION['isLoggin'] == true): ?>

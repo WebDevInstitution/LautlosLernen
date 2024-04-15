@@ -29,5 +29,4 @@ class DefaultController extends AbstractController {
                 VALUES (NULL, '$vorname', '$nachname', '$hashedPassword', '$email', '$username')";
         $this->database->query($sql);
     }
-    
 }
