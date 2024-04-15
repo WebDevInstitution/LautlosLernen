@@ -9,7 +9,7 @@
                 <th>Inhaltsverzeichnis</th>
             </tr>
             <tr>
-                <td><a href="#warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</a></td>
+                <td><a href="#warum-gebaerdensprache-lernen">Warum solltest du Gebärdensprache lernen?</a></td>
             </tr>
             <tr>
                 <td><a href="#unsere-vision">Unsere Vision</a></td>
@@ -24,20 +24,16 @@
     </div>
 
 </p>
-<h2 id="warum-gebaerdensprache-lernen">Warum Gebärdensprache lernen?</h2>
+<h2 id="warum-gebaerdensprache-lernen">Warum solltest du Gebärdensprache lernen?</h2>
 <p>
-    Du hast jemanden kennengelernt mit dem Du nicht kommunizieren kannst wie gewohnt?
-    <br>Deine Lebensumstände haben sich geändert und auf einmal reichen Worte nicht mehr aus?
-    <br>Oder bist Du einfach nur neugierig darauf, eine neue Sprache zu lernen, obwohl Du sie schon sprichst?
-    <br>Egal aus welchen Grund, es kann sich lohnen, Gebärdensprache zu lernen:
+    Das Erlernen von Gebärdensprache bietet zahlreiche Vorteile. Zum einen ermöglicht es eine barrierefreie Kommunikation mit hörbeeinträchtigten Personen, was zu einer inklusiveren Gesellschaft beiträgt und Barrieren abbaut. Darüber hinaus eröffnet es berufliche Möglichkeiten in Bereichen wie Bildung, Sozialarbeit und medizinische Versorgung. Doch Gebärdensprache ist nicht nur ein Kommunikationsmittel, sondern auch Teil einer eigenen Kultur und Tradition. Durch das Erlernen von DGS erhält man ein besseres Verständnis für die Gebärdensprachgemeinschaft und ihre Lebensweise.
+    <br>Letztendlich trägt das Erlernen von Gebärdensprache nicht nur zur persönlichen Bereicherung bei, sondern auch dazu, eine Welt zu schaffen, die für alle zugänglicher und inklusiver ist.
 </p>
-<img src="../img/statistik.png" alt="Statistik zur Anzahl der Schwerhörigen und Menschen mit Sprach- oder Sprechstörungen in Deutschland nach Art der Behinderung in den Jahren 2017 bis 2021" width=80% height=60%>
-<p>Indem Du Gebärdensprache lernst, öffnen sich Türen zu neuen Freundschaften, beruflichen Chancen und einem tieferen Verständnis für die Vielfalt unserer Gesellschaft.</p>
 
 <h2 id="unsere-vision">Unsere Vision</h2>
 <p>
     Die Gebärdensprache ist viel mehr als nur eine Kommunikationsform. Sie ist eine Brücke, die uns mit denen verbindet, die auf konventionelle Art nicht an unserem Miteinander teilhaben können. 
-    <br>Sie ermöglicht uns, die Welt aus einer neuen Perspektive zu betrachten und von Menschen zu lernen, die das Leben auf eine andere Art erfahren.
+    <br>Sie ermöglicht uns, die Welt aus einer neuen Perspektive zu betrachten und Kommunikationshürden zu verringern.
 </p>
 <p>
     Unser Team von Experten steht Dir dabei zur Seite, um Dir ein inspirierendes und unterstützendes Lernumfeld zu bieten. 
@@ -49,7 +45,7 @@
 <h2 id="unsere-technologie">Unsere Technologie</h2>
 <p>
     Auf unserer Webseite bieten wir eine einzigartige Möglichkeit, die Gebärdensprache auf eine interaktive und effektive Weise zu erlernen.
-    <br>Dank unserer KI-gestützten Plattform kannst Du die Grundlagen und Feinheiten dieser faszinierenden Sprache in Deinem eigenen Tempo und nach Deinen individuellen Bedürfnissen erlernen.
+    <br>Mit LautlosLernen kannst Du die Grundlagen und Feinheiten von DGS in Deinem eigenen Tempo und nach Deinen individuellen Bedürfnissen erlernen. Dank unserer KI-gestützten Plattform bekommst du direktes Feedback über deinen Lernerfolg. 
 </p>
 
 <h2 id="finanzierung">Unsere Finanzierung & Zugehörigkeit</h2>

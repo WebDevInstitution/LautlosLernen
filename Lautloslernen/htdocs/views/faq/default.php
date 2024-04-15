@@ -1,7 +1,7 @@
 <br>
 <details>
   <summary>Was ist Gebärdensprache?</summary>
-  <p>Gebärdensprache ist eine visuelle Sprache, die von tauben und hörbehinderten Menschen verwendet wird, um zu kommunizieren. Sie basiert auf Handbewegungen, Gesten, Mimik und Körperhaltung und hat ihre eigene Grammatik und Syntax.</p>
+  <p>Gebärdensprache ist eine visuelle Sprache, die von gehörlosen und schwerhörigen Menschen verwendet wird, um zu kommunizieren. Sie basiert auf Handbewegungen, Gesten, Mimik und Körperhaltung und hat ihre eigene Grammatik und Syntax. Allein die Deutsche Gebärdensprache umfasst ca. 18.000 Gebärden, woraus in Kombination mit Mimik und Kopf- oder Oberkörperhaltung einen Wortschatz von ca. 250.000 Ausdrücken ermöglichen.</p>
 </details>
 
 <details>
