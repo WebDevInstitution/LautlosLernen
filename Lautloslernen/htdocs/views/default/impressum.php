@@ -2,7 +2,7 @@
 
 <h2>Verantwortlich für den Inhalt:</h2>
 <p>LautlosLernen | Landesverband der Gehörlosen Baden-Württemberg e.V.<br>
-Hohenheimer Str.5<br>
+Hohenheimer Str. 5<br>
 D-70184 Stuttgart<br>
 kontakt@lautoslernen.de<br></p>
 
