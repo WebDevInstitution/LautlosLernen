@@ -37,7 +37,6 @@ class learningController extends AbstractController {
             $this->view->setView("views/learning/rightAnswer.php");
 
         } else {
-
             $dashboardRepository->incrementWrongAnswer($_SESSION["UserID"], $letterToGuess, $date);
             $lastLetter = $_SESSION['lastShownLetter'];
             $LetterRepository = new LetterRepository($this->database);
