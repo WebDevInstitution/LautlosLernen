@@ -11,6 +11,7 @@ class DefaultController extends AbstractController {
     public function impressumAction() {
         // leer, da keine Aktion
     }
+<<<<<<< Updated upstream
 
     // Wird ausgeführt wenn Registrierungsbutton auf Default gedrückt wird
     public function registrierenAction() {
@@ -30,4 +31,6 @@ class DefaultController extends AbstractController {
         $this->database->query($sql);
     }
     
+=======
+>>>>>>> Stashed changes
 }
