@@ -1,3 +1,4 @@
+<!-- Abstrakte Klasse für alle anderen Repositories -->
 <?php
 
 abstract class AbstractRepository {

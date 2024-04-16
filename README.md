@@ -9,8 +9,10 @@ Um das Projekt auf dem eigenen PC richtig verwenden zu können, muss [Docker Des
 Für die Installation müssen die folgenden Schritte ausgeführt werden:<br>
 <ins>Unter Windows:</ins><br>
 Es muss [das Linux Subsystem for Windows WSL 2](https://learn.microsoft.com/de-de/windows/wsl/install) installiert werden.<br>
+Für alle Unix basierten Betriebsysteme ist dies nicht nötig.<br>
 <ins>Für alle Betriebssysteme:</ins><br>
 Im Verzeichnis `Lautloslernen/` muss das File `docker-compose.yml` über ein Terminal mit ```docker-compose up``` gestartet werden.<br>
+Währenddessen muss Docker Desktop gestartet sein.<br>
 Der daraus gebaute Container macht den Abruf der Website unter [http://localhost:8080](http://localhost:8080) möglich.<br>
 Die Datenbank ist unter dem [http://localhost:8081](http://localhost:8081) zu finden.<br>
 Login-Daten dafür sind:

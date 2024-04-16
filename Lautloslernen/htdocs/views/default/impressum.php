@@ -1,10 +1,10 @@
 <h1>Impressum und Haftungsausschluss</h1>
 
 <h2>Verantwortlich für den Inhalt:</h2>
-<p>LautlosLernen<br>
-Musterstraße 1a<br>
-Stuttgart 70174<br>
-kontakt@lautoslernen.com<br></p>
+<p>LautlosLernen | Landesverband der Gehörlosen Baden-Württemberg e.V.<br>
+Hohenheimer Str. 5<br>
+D-70184 Stuttgart<br>
+kontakt@lautoslernen.de<br></p>
 
 <h2>Haftungsausschluss:</h2>
 <p>Die Informationen auf dieser Website wurden sorgfältig recherchiert und zusammengestellt. Dennoch kann keine Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der bereitgestellten Inhalte übernommen werden. Jegliche Haftung für Schäden, die direkt oder indirekt aus der Nutzung dieser Website entstehen, wird ausgeschlossen.</p>

@@ -8,6 +8,7 @@ class learningController extends AbstractController {
         $this->getNextLetterAction();
     }
 
+    // Bekomme den nächsten Buchstaben
     public function getNextLetterAction(){
         $LetterRepository = new LetterRepository($this->database);
         $nextLetter = $LetterRepository->getnextLetter();
@@ -15,6 +16,7 @@ class learningController extends AbstractController {
         $this->view->setView("views/learning/default.php");
     } 
 
+    // Überprüfe die Antwort
     public function checkAnswerAction(){
         $dashboardRepository = new DashboardRepository($this->database);
         $letterToGuess = $_POST['letterToGuess'];
